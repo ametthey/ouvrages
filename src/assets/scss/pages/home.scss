@@ -1,0 +1,13 @@
+.home {
+    #masthead {
+        .header-navigation--logo {
+            a {
+                h2 {
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

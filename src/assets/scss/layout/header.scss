@@ -1,0 +1,184 @@
+/****************************************************
+ * Header
+ * *************************************************/
+
+#masthead {
+    height: auto;
+    position: relative;
+
+    @include respond(tablet) {
+        position: sticky;
+        top: 0;
+    }
+
+    a,
+    span  {
+        align-self: center;
+        cursor: pointer;
+    }
+
+    // NAVIGATION
+    .header-navigation {
+        @include grid( repeat(12, 1fr), 1fr, $ratio, $ratio,  repeat(4, 1fr), 1fr ,$ratio, $ratio);
+        background-color: $bg;
+        border-bottom: 1px solid $color;
+        height: 62px;
+        padding: $ratio;
+        position: sticky;
+        top: 0;
+
+        .navigation--projects,
+        .navigation--office {
+            opacity: 1;
+
+            @include respond(tablet) {
+                display: none;
+                height: 0px;
+                opacity: 0;
+                padding: 0 $ratio;
+                // transition: all 0.325s $easing;
+            }
+
+            &.active {
+            }
+        }
+
+        .navigation--office {
+            opacity: 1;
+
+            &.active {
+                @include respond(tablet) {
+                    align-self: center;
+                    background-color: $bg;
+                    border-bottom: 1px solid $color;
+                    display: block;
+                    height: auto;
+                    left: 0;
+                    opacity: 1;
+                    padding: $ratio;
+                    position: absolute;
+                    top: 248px;
+                    width: 100vw;
+                }
+            }
+        }
+
+        .navigation--projects {
+            opacity: 1;
+
+            @include respond(tablet) {
+                display: none;
+                height: 0px;
+                opacity: 0;
+                padding: 0 $ratio;
+                transform: translateY(-186px);
+                transition: transform 0.325s $easing;
+            }
+
+            &.active {
+                @include respond(tablet) {
+                    align-self: center;
+                    background-color: $bg;
+                    border-bottom: 1px solid $color;
+                    display: block;
+                    height: 186px;
+                    left: 0;
+                    opacity: 1;
+                    padding: $ratio;
+                    position: absolute;
+                    transform: translateY(0);
+                    top: 62px;
+                    width: 100vw;
+                }
+            }
+        }
+
+        .navigation--hamburger {
+            align-self: center;
+            display: none;
+            @include respond(tablet) {
+                display: flex;
+            }
+        }
+
+        .header-navigation--logo {
+            align-self: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            a {
+                @include flex( center, center, row, center, center, row );
+
+                h2 {
+                    @include respond(tablet) {
+                        // TROP GRAND
+                        // font-size: $small;
+                        font-size: $smaller;
+                    }
+
+                    &:first-child {
+                        margin-left: 90px;
+
+                        @include respond(tablet) {
+                            margin-left: 0;
+                        }
+
+                        &:after {
+                            content: '|';
+                            margin: 0 $ratio;
+
+                            @include respond(tablet) {
+                                margin: 0 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // OFFICE COLLAPSE
+        .header-navigation--office {
+            background-color: $bg;
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 18px;
+            position: absolute;
+            top: 62px;
+            transition: max-height 0.2s $easing;
+
+            &.active {
+                border-bottom: 1px solid $color;
+            }
+
+            p {
+                margin: auto;
+                padding: 30px 0;
+                text-align: center;
+                width: 60%;
+
+                @include respond(tablet) {
+                    width: 100%;
+                }
+            }
+        }
+
+        // CATEGORIE
+        .header-category {
+            @include grid( repeat(12, 1fr), 1fr, $ratio, $ratio,  repeat(4, 1fr), 1fr ,$ratio, $ratio);
+            display: none;
+            background-color: $bg;
+            border-bottom: 1px solid $color;
+            height: 62px;
+            padding: $ratio;
+            position: absolute;
+            top: 62px;
+            width: 100%;
+        }
+    }
+
+
+}
+
+
+

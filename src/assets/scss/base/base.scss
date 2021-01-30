@@ -1,0 +1,73 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+* {
+    box-sizing: inherit;
+
+    & :before {
+        box-sizing: inherit;
+    }
+
+    & :after {
+        box-sizing: inherit;
+    }
+}
+
+html {
+    box-sizing: border-box;
+    // scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+button {
+    outline: none;
+}
+
+a {
+    color: $color;
+    text-decoration: none;
+
+    & :hover {
+        color: inherit;
+        cursor: hand;
+        outline: none;
+    }
+    & :active {
+        color: inherit;
+        outline: none;
+    }
+    & :focus {
+        color: inherit;
+        outline: none;
+    }
+}
+
+#page {
+    // height: 100%;
+    // height: 4000px;
+    // width: 100%;
+}
+
+/*************************************************
+ * VERIFY BEFORE DELETE
+*************************************************/
+// #content {
+//     height: 100%;
+//     position: relative;
+//     width: 100%;
+// }
+// #main {
+//     height: 100%;
+//     position: relative;
+//     width: 100%;
+// }

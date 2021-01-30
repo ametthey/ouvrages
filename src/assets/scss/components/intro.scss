@@ -1,0 +1,38 @@
+#container-intro {
+    background-color: $color;
+    display: grid;
+    height: calc( 100vh - 62px );
+    place-items: center;
+    width: 100vw;
+
+    @include respond(tablet) {
+        height: 100vh;
+    }
+
+    .intro--texts {
+        @include flex(center, center, row, center, center, row);
+        height: 100%;
+
+        h1 {
+            color: $bg;
+
+            @include respond(tablet) {
+                font-size: $small;
+            }
+
+            &.intro--logo {
+                &:after {
+                    content: '|';
+                    margin: 0 30px;
+
+                    @include respond(tablet) {
+                        margin: 0 10px;
+                    }
+                }
+            }
+
+            &.intro--project {
+            }
+        }
+    }
+}

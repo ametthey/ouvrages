@@ -1,0 +1,173 @@
+.single-grid {
+
+    .single-grid--container {
+        @include grid (repeat(2, 1fr), auto, 0, 0, repeat(1, 1fr), repeat(2, 1fr), 0, 0);
+        height: calc( 100vh - 62px );
+        overflow: hidden;
+
+        @include respond(tablet) {
+            height: calc( 100vh - 124px );
+        }
+
+        // CONTAINER LEFT
+        .single-grid--container-left {
+            background-color: red;
+
+            // FOOTER LEFT
+            .single-grid--footer-container-left {
+                background-color: $bg;
+                border-top: 1px solid $color;
+                border-right: 1px solid $color;
+                bottom: 0;
+                @include flex(center, center, column, center, space-between, row );
+                height: 62px;
+                padding: $ratio;
+                width: 50vw;
+                position: absolute;
+                transition: all 0.325s $easing;
+                z-index: 2;
+
+                @include respond(tablet) {
+                    border-right: none;
+                    position: fixed;
+                    width: 100vw;
+                }
+
+                // ACTIVE STATE
+                &.active {
+                    border-top: none;
+                    justify-content: flex-start;
+                    height: calc( 100vh - 62px );
+
+                    & > img {
+                        display: block;
+                    }
+
+                    .single-grid--donnees-techniques {
+                        display: flex;
+                    }
+
+
+                        @include respond(tablet) {
+                            & > a {
+                                align-self: start;
+                            }
+
+                            & > img {
+                                top: $ratio;
+                            }
+
+                            & > .next-post {
+                                display: none;
+                                // bottom: 11px;
+                                // top: auto;
+                                // transform: translateY(0);
+                            }
+                        }
+                }
+
+                // LINK DONNEES TECHNIQUES
+                & > a {
+                    align-self: start;
+
+                    @include respond(tablet) {
+                        align-self: center;
+                    }
+                }
+
+                // CLOSE BUTTON
+                & > img {
+                    cursor: pointer;
+                    display: none;
+                    padding-right: $ratio;
+                    position: absolute;
+                    right: 0;
+                }
+
+                // PROJECTS SUIVANTS MOBILE
+                .next-post {
+                    display: none;
+
+                    @include respond(tablet) {
+                        align-self: center;
+                        // bottom: 11px;
+                        display: block;
+                        position: absolute;
+                        transform: translateY(-50%);
+                        top: 50%;
+                        right: 11px;
+                    }
+                }
+
+                // DONNES TECHNIQUES
+                .single-grid--donnees-techniques {
+                    @include flex(flex-start, flex-start, column, flex-start, space-between, column );
+                    display: none;
+                    position: absolute;
+                    top: 62px;
+                    overflow: scroll;
+
+
+                    .single-grid--donnes-techniques-container {
+                        @include flex(flex-start, flex-start, row, flex-start, space-between, row );
+                        width: 100%;
+
+                        &.donnes-techniques-margin {
+                            margin-bottom: 20px;
+                            @include respond(tablet) {
+                                margin-bottom: 10px;
+                            }
+                        }
+
+                        .single-grid--title {
+                            width: 40%;
+
+                            @include respond(tablet) {
+                                width: 30%;
+                            }
+                        }
+                        .single-grid--information {
+                            width: 60%;
+
+                            @include respond(tablet) {
+                                width: 70%;
+                            }
+                        }
+                    }
+
+                }
+
+                .single-grid--footer-fake {
+                    display: none;
+                    background-color: $bg;
+                    border-top: 1px solid $color;
+                    bottom: 0;
+                    height: 62px;
+                    width: 50vw;
+                    position: absolute;
+                }
+            }
+        }
+
+        // CONTAINER RIGHT
+        .single-grid--container-right {
+            background-color: blue;
+
+            // FOOTER RIGHT
+            .single-grid--footer-container-right {
+                background-color: $bg;
+                bottom: 0;
+                border-top: 1px solid $color;
+                @include flex(center, flex-end, row, center, space-between, row );
+                height: 62px;
+                padding: $ratio;
+                position: absolute;
+                width: 50vw;
+
+                @include respond(tablet) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+/****************************************************
+ * Layout System
+ * *************************************************/
+
+
+// Compile grid-template-columns and grid-template-rows
+@mixin grid($columns, $rows, $gapColumn, $gapRow, $columnsSmall, $rowsSmall , $gapColumnSmall, $gapRowSmall) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    gap: $gapColumn $gapRow;
+
+    @include respond(tablet) {
+        grid-template-columns: $columnsSmall;
+        grid-template-rows: $rowsSmall;
+        gap: $gapColumnSmall $gapRowSmall;
+    }
+}
+
+@mixin flex($align, $justify, $direction, $alignSmall, $justifySmall, $directionSmall) {
+    align-items: $align;
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+
+    @include respond(tablet) {
+        align-items: $alignSmall;
+        flex-direction: $directionSmall;
+        justify-content: $justifySmall;
+    }
+
+}
+
+/****************************************************
+ *	MIXINS: MEDIA QUERIES
+ * *************************************************/
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint==hd {
+        @media only screen and (max-width: 1440px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==md {
+        @media only screen and (max-width: 1280px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==tablet {
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==mobile {
+        @media only screen and (max-width: 599px) {
+            @content;
+        }
+    }
+}

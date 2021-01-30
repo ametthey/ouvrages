@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------
+// Basic Typography Style For Copy Text
+// -----------------------------------------------------------------------------
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: $bg;
+    color: $color;
+    font-family: 'Berthe Regular', sans-serif;
+    line-height: $lh;
+}
+
+p {
+    font-size: $p;
+    line-height: $lh;
+}
+
+h1 {
+    font-size: $huge;
+    line-height: $lh;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: $big;
+    line-height: $lh;
+    text-transform: uppercase;
+}

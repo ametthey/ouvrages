@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+@font-face {
+    font-family: 'Berthe Italic';
+    src: url('../fonts/Berthe_TEST-Italic.woff2') format('woff2'),
+        url('../fonts/Berthe_TEST-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Berthe Regular';
+    src: url('../fonts/Berthe_TEST-Regular.woff2') format('woff2'),
+        url('../fonts/Berthe_TEST-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
