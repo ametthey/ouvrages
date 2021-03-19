@@ -22,6 +22,21 @@
                 <!-- NAVIGATION ITEMS -->
                 <span class="navigation--projects">
                     <a href="<?php echo get_post_type_archive_link( 'project' ); ?>">Projets</a>
+
+                    <!-- CATEGORY MOBILE -->
+                    <?php
+                        $categories = get_terms( array(
+                            'taxonomy'  => 'categorie',
+                            'hide_empty'=> false
+
+                            )
+                        );
+
+                        foreach( $categories as $category ) {
+                    ?>
+                            <span class="category-item category-<?php echo esc_html( $category->slug ); ?>"><?php echo esc_html( $category->name ); ?></span>
+                    <?php } ?>
+                        <span id="all-projects">Tout voir</span>
                 </span>
 
                 <span class="navigation--office">
@@ -101,5 +116,4 @@
             </div>
         </header>
 
-        <div id="page">
 

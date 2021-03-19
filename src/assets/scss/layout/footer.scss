@@ -8,13 +8,68 @@ footer {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    padding: 10px 0;
 
-    display: none;
+    @include respond(tablet) {
+        flex-direction: column;
+    }
+
+    & > * {
+        font-size: $tiny;
+    }
 
     .footer--credits {
         display: flex;
-        flex-direction: column;
-        margin: 0 20px;
+
+        @include respond(tablet) {
+            flex-direction: column;
+            margin: 20px 0;
+        }
+
+        a {
+            &:first-child {
+                margin: 0 20px 0 0;
+
+                @include respond(tablet) {
+                    margin: 0;
+                }
+
+                &:after {
+                    content: '|';
+                    margin: 0 0 0 20px;
+
+                    @include respond(tablet) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &:before {
+            content: '|';
+            margin: 0 20px;
+
+            @include respond(tablet) {
+                display: none;
+                margin: 0;
+            }
+        }
+
+        &:after {
+            content: '|';
+            margin: 0 20px;
+
+            @include respond(tablet) {
+                display: none;
+                margin: 0;
+            }
+        }
+
+    }
+}
+
+.single {
+    footer {
+        display: none;
     }
 }

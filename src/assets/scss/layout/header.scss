@@ -91,7 +91,7 @@
                     opacity: 1;
                     padding: $ratio;
                     position: absolute;
-                    top: 248px;
+                    top: 205px;
                     width: 100vw;
 
                     // NAV ACTIVE
@@ -132,13 +132,21 @@
                 transition: transform 0.325s $easing;
             }
 
+            .category-item ,
+            #all-projects{
+                display: none;
+                opacity: 0;
+                pointer-events: none;
+            }
+
             &.active {
                 @include respond(tablet) {
                     align-self: center;
                     background-color: $bg;
                     border-bottom: 1px solid $color;
                     display: block;
-                    height: 186px;
+                    // height: 186px;
+                    height: auto;
                     left: 0;
                     opacity: 1;
                     padding: $ratio;
@@ -148,15 +156,52 @@
                     width: 100vw;
 
                     display: grid;
-                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-columns: repeat(3, 1fr);
                     grid-template-areas:
-                        'project category . .';
+                        'project bureaux .'
+                        '. commercial .'
+                        '. residentiel .'
+                        '. hospitalite tout';
                     grid-auto-rows: auto;
+
+                    & > * {
+                        height: 30px;
+                        place-self: flex-start flex-start;
+                        // margin: 5px 0;
+                    }
+
+                    .category-item ,
+                    #all-projects{
+                        display: block;
+                        opacity: 1;
+                        pointer-events: auto;
+                    }
 
                     // LINK PROJECTS
                     a {
                         align-self: start;
                         grid-area: project;
+                    }
+
+                    .category-bureaux {
+                        grid-area: bureaux;
+                    }
+
+                    .category-commercial {
+                        grid-area: commercial;
+                    }
+
+                    .category-hospitalite {
+                        grid-area: hospitalite;
+                    }
+
+                    .category-residentiel {
+                        grid-area: residentiel;
+                    }
+
+                    #all-projects {
+                        grid-area: tout;
+                        place-self: flex-start flex-end;
                     }
 
                     // CATEGORIES
@@ -292,7 +337,7 @@
         padding: $ratio;
         position: sticky;
         top: 61px;
-        width: calc( 100% - 11px );
+        width: 100%;
         z-index: 3;
 
         & > * {

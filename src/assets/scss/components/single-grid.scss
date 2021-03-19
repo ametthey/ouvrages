@@ -15,6 +15,8 @@
             width: 50vw;
 
             @include respond(tablet) {
+                border-bottom: 1px solid $color;
+                // height: calc( 100% - 1px );
                 width: 100vw;
             }
 
@@ -44,7 +46,12 @@
                     border-top: none;
                     justify-content: flex-start;
                     height: calc( 100vh - 62px );
-                    // top: 0;
+
+                    @include respond(tablet) {
+                        overflow: auto;
+                        height: calc( 100% - 62px );
+                        top: 62px;
+                    }
 
                     & > img {
                         display: block;
@@ -170,6 +177,10 @@
 
                     &.active {
                         display: block;
+
+                        @include respond(tablet) {
+                            display: none;
+                        }
                     }
                 }
             }

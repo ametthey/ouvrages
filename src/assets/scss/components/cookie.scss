@@ -1,10 +1,29 @@
-#cookie-notice {
-    border: 1px solid $color;
-    font-family: 'Berthe Regular', sans-serif !important;
+@keyframes fadeInDelay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+
 }
 
-.cookie--button {
-    background-color: $color !important;
-    color: $bg !important;
-    font-family: 'Berthe Regular', sans-serif !important;
+body {
+    #cookie-notice {
+        // animation-name: fadeInDelay;
+        // animation-duration: 0.525s;
+        animation-delay: 5s;
+        border: 1px solid $color;
+        font-family: 'Berthe Regular', sans-serif !important;
+
+        &.cn-effect-fade {
+            border: none;
+        }
+    }
+
+    .cookie--button {
+        background-color: $color !important;
+        color: $bg !important;
+        font-family: 'Berthe Regular', sans-serif !important;
+    }
 }
