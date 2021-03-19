@@ -1,14 +1,36 @@
 .projects-grid {
-    @include grid (repeat(4, 1fr), auto, 0, 0, repeat(1, 1fr), 1fr, 0, 0);
+    @include grid (repeat(4, 1fr), auto, 0, 0, repeat(2, 1fr), 1fr, 0, 0);
     height: 100%;
+    // margin-top: 62px; // desktop
     overflow: scroll;
+    position: relative;
+
+
+    @include respond(md) {
+        grid-template-columns: (repeat(3, 1fr));
+    }
+
+    @include respond(tablet) {
+        grid-template-columns: (repeat(2, 1fr));
+    }
+
+    @include respond(mobile) {
+        grid-template-columns: (repeat(1, 1fr));
+    }
 
     .home-grid--item {
         border-bottom: 1px solid $color;
         border-right: 1px solid $color;
+        // cursor: pointer;
         display: grid;
+        padding: 20px; // Verifier le responsive
         place-items: center;
-        height: 679px;
+        height: 570px;
+        position: relative;
+
+        @include respond(md) {
+            height: 350px;
+        }
 
         @include respond(tablet) {
             border-right: none;
@@ -17,6 +39,44 @@
 
         &:nth-child(4n) {
             border-right: none;
+
+            @include respond(md) {
+                border-right: 1px solid $color;
+            }
+        }
+
+        &:nth-child(3n) {
+            @include respond(md) {
+                border-right: none;
+            }
+        }
+
+        &:nth-child(2n) {
+            @include respond(tablet) {
+                border-right: none;
+            }
+        }
+
+        &:nth-child(odd) {
+            @include respond(tablet) {
+                border-right: 1px solid $color;
+            }
+
+            @include respond(mobile) {
+                border-right: none;
+            }
+        }
+
+        h2 {
+            opacity: 1;
+            text-align: center;
+            transition: opacity 0.325s $easing;
+            position: relative;
+            z-index: 2;
+
+            @include respond(tablet) {
+                font-size: $smaller;
+            }
         }
 
         a {
@@ -25,15 +85,38 @@
         }
 
         img {
-            display: none;
-            // height: 100%;
-            // object-fit: cover;
-            // object-position: center;
-            // opacity: 0;
-            // overflow: hidden;
-            // position: relative;
-            // width: 100%;
-            // z-index: 1;
+            display: block;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            transition: opacity 0.325s ease-in-out;
+            width: 100%;
+            z-index: 1;
+        }
+
+        &:hover {
+            img {
+                opacity: 1;
+            }
+        }
+
+        &.is-filtered {
+            h2 {
+                opacity: 0;
+            }
+
+            a {
+                pointer-events: none;
+            }
+
+            &:hover {
+                img {
+                    opacity: 0;
+                }
+            }
         }
 
     }

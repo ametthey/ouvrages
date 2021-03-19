@@ -11,20 +11,25 @@
 
         // CONTAINER LEFT
         .single-grid--container-left {
-            background-color: red;
+            position: relative;
+            width: 50vw;
+
+            @include respond(tablet) {
+                width: 100vw;
+            }
 
             // FOOTER LEFT
             .single-grid--footer-container-left {
                 background-color: $bg;
                 border-top: 1px solid $color;
-                border-right: 1px solid $color;
                 bottom: 0;
                 @include flex(center, center, column, center, space-between, row );
                 height: 62px;
+                overflow: scroll;
                 padding: $ratio;
-                width: 50vw;
                 position: absolute;
                 transition: all 0.325s $easing;
+                width: 50vw;
                 z-index: 2;
 
                 @include respond(tablet) {
@@ -35,9 +40,11 @@
 
                 // ACTIVE STATE
                 &.active {
+                    // border-bottom: 1px solid $color;
                     border-top: none;
                     justify-content: flex-start;
                     height: calc( 100vh - 62px );
+                    // top: 0;
 
                     & > img {
                         display: block;
@@ -69,6 +76,7 @@
                 // LINK DONNEES TECHNIQUES
                 & > a {
                     align-self: start;
+                    font-size: $p;
 
                     @include respond(tablet) {
                         align-self: center;
@@ -103,9 +111,18 @@
                 .single-grid--donnees-techniques {
                     @include flex(flex-start, flex-start, column, flex-start, space-between, column );
                     display: none;
+                    padding: 0 11px 11px;
                     position: absolute;
                     top: 62px;
-                    overflow: scroll;
+                    // width: 50vw;
+                    // overflow: scroll;
+
+                    width: calc( 50vw - 26px );
+                    left: 0;
+
+                    @include respond(tablet) {
+                        width: 100vw;
+                    }
 
 
                     .single-grid--donnes-techniques-container {
@@ -145,13 +162,27 @@
                     height: 62px;
                     width: 50vw;
                     position: absolute;
+
+                    @include respond(tablet) {
+                        width: 100vw;
+                        left: 0;
+                    }
+
+                    &.active {
+                        display: block;
+                    }
                 }
             }
         }
 
         // CONTAINER RIGHT
         .single-grid--container-right {
-            background-color: blue;
+            width: 50vw;
+
+            @include respond(tablet) {
+                width: 100vw;
+            }
+
 
             // FOOTER RIGHT
             .single-grid--footer-container-right {

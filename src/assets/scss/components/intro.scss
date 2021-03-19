@@ -1,3 +1,14 @@
+// ANIMATION TEXT CHANGE
+// https://codepen.io/Ellaylone/pen/eRrZaw
+@keyframes change {
+    0% {
+        transform:translate3d(0,0,0);
+    }
+    100% {
+        transform:translate3d(0,-100%,0);
+    }
+}
+
 #container-intro {
     background-color: $color;
     display: grid;
@@ -10,28 +21,73 @@
     }
 
     .intro--texts {
-        @include flex(center, center, row, center, center, row);
-        height: 100%;
+        @include flex(center, center, row, center, center, column);
+        height: auto;
 
         h1 {
             color: $bg;
+            text-align: right;
+            width: calc( 50vw - 10.5px );
 
             @include respond(tablet) {
                 font-size: $small;
+                line-height: $small;
+                text-align: center;
+            }
+        }
+
+        .intro--separator {
+            border: 0.5px solid $bg;
+            height: $huge;
+            margin: 10px;
+
+            @include respond(tablet) {
+                border: 0.5px solid $bg;
+                height: 0.5px;
+                width: 100px;
+            }
+        }
+
+        .intro--animations {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            height: $big;
+            overflow: hidden;
+            position: relative;
+            width: calc( 50vw - 10.5px );
+
+            @include respond(tablet) {
+                align-items: center;
+                height: $tiny;
+                width: 100vw;
             }
 
-            &.intro--logo {
-                &:after {
-                    content: '|';
-                    margin: 0 30px;
+            .animations-container {
+                animation-name: change;
+                animation-duration: 8.25s;
+                animation-iteration-count: infinite;
+                animation-timing-function: steps(8);
+
+                @include respond(tablet) {
+                    display: grid;
+                    place-items: center;
+                    width: inherit;
+                }
+
+                h1 {
+                    font-size: $big;
+                    line-height: $big;
+                    text-align: left;
 
                     @include respond(tablet) {
-                        margin: 0 10px;
+                        font-size: $tiny;
+                        height: $tiny;
+                        line-height: $tiny;
+                        text-align: center;
+                        width: inherit;
                     }
                 }
-            }
-
-            &.intro--project {
             }
         }
     }

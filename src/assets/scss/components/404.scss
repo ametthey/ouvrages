@@ -1,0 +1,8 @@
+.container-error {
+    background-color: $color;
+    color: $bg;
+    display: grid;
+    height: calc( 100vh - 62px );
+    place-items: center;
+    width: 100vw;
+}

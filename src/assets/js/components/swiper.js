@@ -1,19 +1,22 @@
 // import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
 
-const swiperContainerLeft = document.querySelector('.swiper-container');
-let swiperSettings = {
-    // working when settings swiper-container height to auto
-    autoHeight: true,
-    directon: 'vertical',
-    loop: true,
-    speed: 900,
+const swiperContainerLeft = document.querySelector('.swiper-container-left');
+const swiperContainerRight = document.querySelector('.swiper-container-right');
+if ( swiperContainerLeft && swiperContainerRight ) {
+    let swiperSettings = {
+        // autoplay: true,
+        directon: 'vertical',
+        speed: 900,
+        on: {
+            click: () => {
+                MySwiperLeft.slideNext(900, true);
+            }
+        }
+     };
+    let MySwiperLeft = new Swiper( swiperContainerLeft, swiperSettings  );
+    let MySwiperRight = new Swiper( swiperContainerRight, swiperSettings  );
+    MySwiperLeft.controller.control = MySwiperRight;
+    MySwiperRight.controller.control = MySwiperLeft;
+}
 
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-};
-let MySwiperLeft = new Swiper( swiperContainerLeft, swiperSettings  );

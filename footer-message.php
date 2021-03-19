@@ -1,5 +1,3 @@
-
-
             </div><!-- #content -->
 
             <footer>

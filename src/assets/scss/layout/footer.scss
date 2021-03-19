@@ -5,8 +5,16 @@
  * *************************************************/
 
 footer {
-    background-color: DarkOrange;
+    align-items: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin: 20px 0;
 
+    display: none;
+
+    .footer--credits {
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px;
+    }
 }

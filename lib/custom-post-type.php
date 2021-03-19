@@ -1,5 +1,4 @@
 <?php
-
 // Register Custom Post Type Project
 // Post Type Key: project
 function _themename_custom_post_type() {
@@ -38,7 +37,7 @@ function _themename_custom_post_type() {
 		'description' => __( 'Check out our portfolio projects', '_themename' ),
 		'labels' => $labels,
         'menu_icon' => 'dashicons-admin-customizer',
-		'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+		'supports' => array('title', 'editor', 'thumbnail'),
 		'taxonomies' => array( 'categorie' ),
 		'public' => true,
 		'show_ui' => true,
@@ -58,4 +57,3 @@ function _themename_custom_post_type() {
 
 }
 add_action( 'init', '_themename_custom_post_type', 0 );
-

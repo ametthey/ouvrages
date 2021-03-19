@@ -1,5 +1,4 @@
 <?php
-
     /*
      * Add Theme Support
      * @documentation: https://developer.wordpress.org/reference/functions/add_theme_support/

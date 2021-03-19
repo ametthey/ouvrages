@@ -1,8 +1,7 @@
 <?php get_header( 'project' ); ?>
 
-
-<div class="projects-grid">
-        <p>404</p>
+<div class="container-error">
+    <h1>ERREUR 404</h1>
 </div>
 
 <?php get_footer(); ?>

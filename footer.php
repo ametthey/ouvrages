@@ -1,14 +1,14 @@
-
-
             </div><!-- #page -->
 
             <footer>
 
-                <?php
-                    // $footer_message = '&copy;' . date( 'Y' ) . ' ' . get_bloginfo( 'name' );
-                ?>
+                <a href="#">mentions légales</a>
 
-                <p><?php //echo apply_filters( '_themename_footer_message', $footer_message ); ?></p>
+                <div class="footer--credits"><a href="#">Graphisme: Current Matters.ltd</a> <a href="#">Développement: Albin Metthey</a></div>
+
+                <!-- COPYRIGHT AND YEAR -->
+                <?php $footer_message = '&copy;' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ); ?>
+                <p><?php echo apply_filters( '_themename_footer_message', $footer_message ); ?></p>
 
             </footer>
 

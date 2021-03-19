@@ -1,10 +1,5 @@
 <?php
-
 /*
  * everything ACF related
  */
-
-
-
-
 ?>

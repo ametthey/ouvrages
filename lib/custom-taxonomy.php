@@ -1,5 +1,4 @@
 <?php
-
 // Register Taxonomy Categorie
 // Taxonomy Key: skill
 function _themename_taxonomy_skill() {
@@ -24,12 +23,20 @@ function _themename_taxonomy_skill() {
 		'public' => true,
 		'publicly_queryable' => true,
 		'show_ui' => true,
+        // Remove possibilities to add categorie
 		'show_in_menu' => true,
-		'show_in_nav_menus' => true,
+		'show_in_nav_menus' => false,
 		'show_tagcloud' => true,
 		'show_in_quick_edit' => true,
 		'show_admin_column' => false,
 		'show_in_rest' => true,
+        // User can't add taxonomies
+         // 'capabilities' => array(
+         //     'manage_terms' => '',
+         //     'edit_terms' => '',
+         //     'delete_terms' => '',
+         //     'assign_terms' => 'edit_posts'
+         // ),
 	);
 	register_taxonomy( 'categorie', array( 'project' ), $args );
 

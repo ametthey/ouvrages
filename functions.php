@@ -1,18 +1,15 @@
 <?php
-
 function _themename_footer_message_uppercase( $message ) {
     $new_message =  strtoupper( $message );
 
     return $new_message;
-
 }
 add_filter( '_themename_footer_message' , '_themename_footer_message_uppercase' , 15 );
 
-add_filter('next_posts_link_attributes', 'posts_link_attributes_2');
 function posts_link_attributes_2() {
     return 'class="next-post"';
 }
-
+add_filter('next_posts_link_attributes', 'posts_link_attributes_2');
 
 require_once( 'lib/theme-supports.php' );
 require_once( 'lib/cleanup.php');
@@ -28,6 +25,7 @@ require_once( 'lib/users.php' );
 
 // https://gist.github.com/Rarst/1739714
 require_once( 'lib/r-debug.php' );
+
 
 
 ?>

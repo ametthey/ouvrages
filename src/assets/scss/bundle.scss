@@ -13,6 +13,7 @@
 @import 'vendors/normalize';
 @import 'vendors/wordpress-core';
 @import 'vendors/swiper';
+@import 'vendors/isotope';
 
 // Base
 @import 'base/base';
@@ -24,6 +25,8 @@
 @import 'components/intro';
 @import 'components/projects-grid';
 @import 'components/single-grid';
+@import 'components/404';
+@import 'components/cookie';
 
 // Layout
 @import 'layout/header';

@@ -11,6 +11,36 @@
         top: 0;
     }
 
+    &.site-header-single {
+        .header-navigation {
+            .header-category {
+                display: none;
+            }
+        }
+
+        @include respond(tablet) {
+            position: relative;
+            top: 0;
+        }
+    }
+
+    // FADE IN/OUT LOGO ON SCROLL
+    &.site-header-home {
+        .header-navigation--logo {
+            opacity: 0 !important;
+        }
+
+        .header-navigation {
+
+            &.is-pinned {
+                .header-navigation--logo {
+                    opacity: 1 !important;
+                }
+            }
+        }
+
+    }
+
     a,
     span  {
         align-self: center;
@@ -25,7 +55,10 @@
         height: 62px;
         padding: $ratio;
         position: sticky;
-        top: 0;
+        top: -1px;
+        z-index: 3;
+
+        // margin-bottom: 62px;
 
         .navigation--projects,
         .navigation--office {
@@ -45,6 +78,7 @@
 
         .navigation--office {
             opacity: 1;
+            z-index: 2;
 
             &.active {
                 @include respond(tablet) {
@@ -59,6 +93,29 @@
                     position: absolute;
                     top: 248px;
                     width: 100vw;
+
+                    // NAV ACTIVE
+                    p {
+                        &:first-child {
+                            display: block;
+                            text-align: center;
+                        }
+
+                        &:last-child {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            //NAV INACTIVE
+            p {
+                &:first-child {
+                    display: none;
+                }
+
+                &:last-child {
+                    display: block;
                 }
             }
         }
@@ -89,8 +146,34 @@
                     transform: translateY(0);
                     top: 62px;
                     width: 100vw;
+
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-areas:
+                        'project category . .';
+                    grid-auto-rows: auto;
+
+                    // LINK PROJECTS
+                    a {
+                        align-self: start;
+                        grid-area: project;
+                    }
+
+                    // CATEGORIES
+                    .header-category {
+                        align-self: start;
+                        grid-area: category;
+
+                        border: none;
+                        display: flex;
+
+                        display: none;
+
+                    }
                 }
+
             }
+
         }
 
         .navigation--hamburger {
@@ -103,35 +186,69 @@
 
         .header-navigation--logo {
             align-self: center;
-            position: absolute;
             left: 50%;
+            opacity: 1;
+            position: absolute;
             transform: translateX(-50%);
+            transition: opacity 0.325s $easing;
 
-            a {
+            height: auto;
+            width: 50%;
+
+            z-index: 1;
+
+            // background-color: red;
+
+            @include respond(tablet) {
+                height: auto;
+                width: 75vw;
+            }
+
+            // a {
+            .logo--container {
                 @include flex( center, center, row, center, center, row );
 
-                h2 {
-                    @include respond(tablet) {
-                        // TROP GRAND
-                        // font-size: $small;
-                        font-size: $smaller;
+                // OUVRAGE
+                .logo--title {
+                    // OUVRAGE
+                    &:first-child {
+                        h2 {
+                            margin-right: 10px !important;
+                            text-align: right;
+                            width: 40vw;
+                        }
+                    }
+                    // PARIS
+                    &:last-child {
+                        h2 {
+                            margin-left: 10px !important;
+                            text-align: left;
+                            width: 40vw;
+                        }
                     }
 
-                    &:first-child {
-                        margin-left: 90px;
+                    h2 {
+                        width: 128px;
 
                         @include respond(tablet) {
-                            margin-left: 0;
+                            font-size: $smaller;
                         }
+                    }
+                }
 
-                        &:after {
-                            content: '|';
-                            margin: 0 $ratio;
 
-                            @include respond(tablet) {
-                                margin: 0 5px;
-                            }
-                        }
+                // SEPARATOR
+                span {
+                    border-right-color: #000;
+                    border-right-style: solid;
+                    border-right-width: 1px;
+                    height: $big;
+                    width: 1px;
+
+                    @include respond(tablet) {
+                        border-right-width: 1px;
+                        height: $smaller;
+                        width: 1px;
                     }
                 }
             }
@@ -146,6 +263,7 @@
             position: absolute;
             top: 62px;
             transition: max-height 0.2s $easing;
+            z-index: 1;
 
             &.active {
                 border-bottom: 1px solid $color;
@@ -163,17 +281,30 @@
             }
         }
 
-        // CATEGORIE
-        .header-category {
-            @include grid( repeat(12, 1fr), 1fr, $ratio, $ratio,  repeat(4, 1fr), 1fr ,$ratio, $ratio);
+
+    }
+    // CATEGORIE
+    .header-category {
+        @include grid( repeat(12, 1fr), 1fr, $ratio, $ratio,  repeat(4, 1fr), 1fr ,$ratio, $ratio);
+        background-color: $bg;
+        border-bottom: 1px solid $color;
+        height: 62px;
+        padding: $ratio;
+        position: sticky;
+        top: 61px;
+        width: calc( 100% - 11px );
+        z-index: 3;
+
+        & > * {
+            &.category-selected {
+                text-decoration: underline;
+            }
+        }
+
+        // display: none;
+
+        @include respond(tablet) {
             display: none;
-            background-color: $bg;
-            border-bottom: 1px solid $color;
-            height: 62px;
-            padding: $ratio;
-            position: absolute;
-            top: 62px;
-            width: 100%;
         }
     }
 
