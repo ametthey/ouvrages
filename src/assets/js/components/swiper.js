@@ -5,18 +5,20 @@ const swiperContainerLeft = document.querySelector('.swiper-container-left');
 const swiperContainerRight = document.querySelector('.swiper-container-right');
 if ( swiperContainerLeft && swiperContainerRight ) {
     let swiperSettings = {
-        // autoplay: true,
-        directon: 'vertical',
+        allowTouchMove: false,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
         speed: 900,
-        on: {
-            click: () => {
-                MySwiperLeft.slideNext(900, true);
-            }
-        }
      };
+    let swiperRightSettings = {
+        allowTouchMove: false,
+        speed: 900,
+    };
     let MySwiperLeft = new Swiper( swiperContainerLeft, swiperSettings  );
-    let MySwiperRight = new Swiper( swiperContainerRight, swiperSettings  );
+    let MySwiperRight = new Swiper( swiperContainerRight, swiperRightSettings );
     MySwiperLeft.controller.control = MySwiperRight;
-    MySwiperRight.controller.control = MySwiperLeft;
+    // MySwiperRight.controller.control = MySwiperLeft;
 }
 

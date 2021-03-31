@@ -29,9 +29,11 @@
 
         </div>
 
+
         <!-- FOOTER LEFT -->
         <div class="single-grid--footer-container-left">
             <a class="donnees-techniques-button" href="#">Données Techniques</a>
+            <span class="next-post-mobile"><?php previous_post_link('%link', 'Project Suivant'); ?></span>
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/close.svg" alt="close button">
 
             <div class="single-grid--donnees-techniques">
@@ -110,8 +112,12 @@
 
 
         <div class="single-grid--footer-container-right">
-            <!-- <span class="next&#45;post"><?php next_post_link('%link', 'Project Suivant', true); ?></span> -->
+            <span class="next-post"><?php previous_post_link('%link', 'Project Suivant'); ?></span>
         </div>
     </div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 </div>
 

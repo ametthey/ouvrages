@@ -23,7 +23,7 @@
         border-right: 1px solid $color;
         // cursor: pointer;
         display: grid;
-        padding: 20px; // Verifier le responsive
+        // padding: 20px; // Verifier le responsive
         place-items: center;
         height: 570px;
         position: relative;
@@ -80,8 +80,10 @@
         }
 
         a {
-            // position: relative;
-            // z-index: 2;
+            display: grid;
+            height: inherit;
+            place-items: center;
+            width: inherit;
         }
 
         img {
@@ -100,6 +102,12 @@
         &:hover {
             img {
                 opacity: 1;
+                border-bottom: 1px solid $color;
+            }
+
+            h2 {
+                opacity: 0;
+                // pointer-events: none;
             }
         }
 

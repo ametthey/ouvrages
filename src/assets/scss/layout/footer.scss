@@ -7,8 +7,8 @@
 footer {
     align-items: center;
     display: flex;
-    justify-content: center;
-    padding: 10px 0;
+    justify-content: flex-start;
+    padding: $ratio;
 
     @include respond(tablet) {
         flex-direction: column;

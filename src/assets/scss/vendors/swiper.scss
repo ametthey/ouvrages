@@ -20,7 +20,7 @@
     .swiper-slide {
         color: $bg;
         height: auto;
-        width: 100vw;
+        width: 100% !important;
 
         img {
             height: 100%;
@@ -32,8 +32,36 @@
     }
 }
 
+// STYLE GENERAL DES BOUTONS
 .swiper-button-prev,
 .swiper-button-next {
     color: $bg;
+    height: calc( 100% - calc( 62px * 2 ) );
+    margin-top: 0;
+    top: 62px;
+    width: 50%;
+
+    &:after {
+        all: unset;
+    }
+
+    @include respond(tablet) {
+        all: unset;
+    }
 }
 
+// BOUTON DE GAUCHE
+.swiper-button-prev {
+    cursor: url('../images/cursor_left.png'), auto;
+    left: 0;
+
+    &.-is-covered {
+        z-index: -10;
+    }
+}
+
+// BOUTON DE DROITE
+.swiper-button-next {
+    cursor: url('../images/cursor_right.png'), auto;
+    right: 0;
+}

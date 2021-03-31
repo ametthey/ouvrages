@@ -47,6 +47,10 @@
                     justify-content: flex-start;
                     height: calc( 100vh - 62px );
 
+                    .next-post-mobile {
+                        display: none;
+                    }
+
                     @include respond(tablet) {
                         overflow: auto;
                         height: calc( 100% - 62px );
@@ -63,19 +67,17 @@
 
 
                         @include respond(tablet) {
+
                             & > a {
                                 align-self: start;
                             }
 
                             & > img {
-                                top: $ratio;
+                                top: calc( #{$ratio} + 62px );
                             }
 
                             & > .next-post {
                                 display: none;
-                                // bottom: 11px;
-                                // top: auto;
-                                // transform: translateY(0);
                             }
                         }
                 }
@@ -97,6 +99,10 @@
                     padding-right: $ratio;
                     position: absolute;
                     right: 0;
+
+                    @include respond(tablet) {
+                        position: fixed;
+                    }
                 }
 
                 // PROJECTS SUIVANTS MOBILE
@@ -135,6 +141,10 @@
                     .single-grid--donnes-techniques-container {
                         @include flex(flex-start, flex-start, row, flex-start, space-between, row );
                         width: 100%;
+
+                        &:last-child {
+                            margin: 0 0 62px 0;
+                        }
 
                         &.donnes-techniques-margin {
                             margin-bottom: 20px;
@@ -181,6 +191,14 @@
                         @include respond(tablet) {
                             display: none;
                         }
+                    }
+                }
+
+                .next-post-mobile {
+                    display: none;
+
+                    @include respond(tablet) {
+                        display: block;
                     }
                 }
             }

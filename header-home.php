@@ -39,34 +39,22 @@
                         <span id="all-projects">Tout voir</span>
                 </span>
 
-                <span class="navigation--office">
-                    <p>A l’origine d’Ouvrage se trouve le plaisir partagé du travail bien fait. Au fil des projets menés conjointement, s’est crystalisée la valeur d’une association de compétences complémentaires. Chacun dans son domaine, dans sa discipline, a fait avancer les projets en intelligence, et en servant les intérêts partagés par tous, avant les intérêts personnels. Fort de plusieurs années de collaboration, cette association de circonstances se transforme aujourd’hui en un projet commun, et prend la forme d’Ouvrage.
-                        <br>
-                        <br>
-                        25 Rue du Bac, F–75008 Paris
-                        <br>
-                        <br>
-                        <a href="mailto:adress@gmail.com">Contactez nous</a>
-                    </p>
+                <span id="office-mobile" class="navigation--office">
+                    <!-- OFFICE MOBILE COLLAPSE -->
+                    <?php get_template_part( 'template-parts/header', 'office-mobile' ); ?>
+
+                    <!-- BUREAU FOR DESKTOP  -->
                     <p>Bureau</p>
                 </span>
-                <button class="navigation--hamburger hamburger"></button>
 
+                <!-- HAMBURGER MENU -->
+                <button class="navigation--hamburger hamburger"></button>
 
                 <!-- LOGO -->
                 <?php get_template_part( 'template-parts/header', 'logo' ); ?>
 
-                <!-- OFFICE COLLAPSE -->
-                <div class="header-navigation--office">
-                    <p>A l’origine d’Ouvrage se trouve le plaisir partagé du travail bien fait. Au fil des projets menés conjointement, s’est crystalisée la valeur d’une association de compétences complémentaires. Chacun dans son domaine, dans sa discipline, a fait avancer les projets en intelligence, et en servant les intérêts partagés par tous, avant les intérêts personnels. Fort de plusieurs années de collaboration, cette association de circonstances se transforme aujourd’hui en un projet commun, et prend la forme d’Ouvrage.
-                        <br>
-                        <br>
-                        25 Rue du Bac, F–75008 Paris
-                        <br>
-                        <br>
-                        <a href="mailto:adress@gmail.com">Contactez nous</a>
-                    </p>
-                </div>
+                <!-- OFFICE DESKTOP COLLAPSE -->
+                <?php get_template_part( 'template-parts/header', 'office-desktop' ); ?>
 
             </div>
             <!-- CATEGORIE -->

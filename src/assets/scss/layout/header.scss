@@ -56,7 +56,8 @@
         padding: $ratio;
         position: sticky;
         top: -1px;
-        z-index: 3;
+        // z-index: 3;
+        z-index: 4; // Pour que le bandeau bureau passe au dessus des filtres
 
         // margin-bottom: 62px;
 
@@ -91,8 +92,11 @@
                     opacity: 1;
                     padding: $ratio;
                     position: absolute;
-                    top: 205px;
+                    // top: 205px;
+                    top: 235px;
                     width: 100vw;
+
+                    overflow: auto;
 
                     // NAV ACTIVE
                     p {
@@ -110,9 +114,9 @@
 
             //NAV INACTIVE
             p {
-                &:first-child {
-                    display: none;
-                }
+                // &:first-child {
+                //     display: none;
+                // }
 
                 &:last-child {
                     display: block;
@@ -161,7 +165,8 @@
                         'project bureaux .'
                         '. commercial .'
                         '. residentiel .'
-                        '. hospitalite tout';
+                        '. hospitalite .'
+                        '. tout .';
                     grid-auto-rows: auto;
 
                     & > * {
@@ -201,7 +206,7 @@
 
                     #all-projects {
                         grid-area: tout;
-                        place-self: flex-start flex-end;
+                        // place-self: flex-start flex-end;
                     }
 
                     // CATEGORIES
@@ -258,17 +263,25 @@
                     // OUVRAGE
                     &:first-child {
                         h2 {
-                            margin-right: 10px !important;
+                            // margin-right: 10px !important;
                             text-align: right;
                             width: 40vw;
                         }
+
+                        // @include respond(tablet) {
+                        //     display: none;
+                        // }
                     }
                     // PARIS
                     &:last-child {
                         h2 {
-                            margin-left: 10px !important;
+                            // margin-left: 10px !important;
                             text-align: left;
                             width: 40vw;
+
+                            // @include respond(tablet) {
+                            //     text-align: center;
+                            // }
                         }
                     }
 
@@ -286,14 +299,18 @@
                 span {
                     border-right-color: #000;
                     border-right-style: solid;
-                    border-right-width: 1px;
+                    border-right-width: 2px;
                     height: $big;
-                    width: 1px;
+                    overflow: hidden;
+                    width: 2px;
+                    margin: 0 10px;
 
                     @include respond(tablet) {
                         border-right-width: 1px;
                         height: $smaller;
                         width: 1px;
+
+                        // display: none;
                     }
                 }
             }
@@ -302,9 +319,28 @@
         // OFFICE COLLAPSE
         .header-navigation--office {
             background-color: $bg;
+            border: none;
+            // @include grid( repeat(12, 1fr), 1fr, $ratio, $ratio,  repeat(4, 1fr), 1fr ,$ratio, $ratio);
+
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 1fr;
+
+            // @include respond(tablet) {
+            //     grid-template-columbs:
+            // }
+
+
+
+            font-size: $p !important;
+            grid-template-areas:
+                '. presentation presentation presentation presentation presentation . . . . . .'
+                'contact adresse adresse adresse adresse adresse . . . . . .'
+                'equipe1 team team team team team . . . . . .'
+                'design cm cm cm cm cm . . . . . .'
+                'dev pe pe pe pe pe . . . . . .';
             max-height: 0;
             overflow: hidden;
-            padding: 0 18px;
             position: absolute;
             top: 62px;
             transition: max-height 0.2s $easing;
@@ -312,18 +348,139 @@
 
             &.active {
                 border-bottom: 1px solid $color;
+                // padding: calc( #{$ratio} * 2 ) calc( #{$ratio} * 2 ) calc( #{$ratio} * 4 );
+                padding: calc( #{ $ratio } * 2)  $ratio calc( #{$ratio} * 4 ) $ratio;
             }
 
             p {
-                margin: auto;
-                padding: 30px 0;
-                text-align: center;
-                width: 60%;
+                // margin: auto;
+                // padding: 30px 0;
+                // // text-align: center;
+                // width: 60%;
+
+                padding: 0 0 calc( #{$ratio} * 2 ) 0;
+
+                &.desktop--office-team {
+                    padding: 0 0 calc( #{$ratio} * 4 ) 0;
+                }
+
+                &.desktop--office-cm {
+                    // padding: 0 0 calc( #{$ratio} * 4 ) 0;
+                }
 
                 @include respond(tablet) {
                     width: 100%;
                 }
             }
+
+            .desktop--office-presentation {
+                grid-area: presentation;
+            }
+
+            .desktop--office-adresse {
+                // align-items: flex-start;
+                // justify-content: flex-start;
+                // display: flex;
+                // flex-direction: column;
+                grid-area: adresse;
+                justify-self: start;
+            }
+
+            .desktop--office-team {
+                grid-area: team;
+            }
+
+            .desktop--office-cm {
+                grid-area: cm;
+            }
+
+            .desktop--office-p {
+                grid-area: pe;
+            }
+
+            .desktop--office-contact {
+                grid-area: contact;
+            }
+
+            .desktop--office-equipe {
+                grid-area: equipe1;
+            }
+
+            .desktop--office-design {
+                grid-area: design;
+            }
+
+            .desktop--office-dev {
+                grid-area: dev;
+            }
+
+
+        }
+        // NAVIGATION MOBILE
+        .header-navigation--office-mobile {
+            display: none;
+
+            @include respond(tablet) {
+                background-color: $bg;
+                border: none;
+                display: grid;
+                font-size: $p !important;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas:
+                    '. presentation presentation'
+                    'contact adresse adresse'
+                    'equipe1 team team'
+                    'design cm cm'
+                    'dev pe pe';
+                grid-template-rows: auto;
+                height: max-content;
+                overflow: auto;
+                max-height: 100%;
+            }
+
+            p {
+                padding: 0 0 calc( #{$ratio} * 3 ) 0;
+            }
+
+            .desktop--office-presentation {
+                grid-area: presentation;
+                text-align: left !important;
+            }
+
+            .desktop--office-adresse {
+                grid-area: adresse;
+                // justify-self: start;
+            }
+
+            .desktop--office-team {
+                grid-area: team;
+            }
+
+            .desktop--office-cm {
+                grid-area: cm;
+            }
+
+            .desktop--office-p {
+                grid-area: pe;
+            }
+
+            .desktop--office-contact {
+                grid-area: contact;
+            }
+
+            .desktop--office-equipe {
+                grid-area: equipe1;
+            }
+
+            .desktop--office-design {
+                display: block !important;
+                grid-area: design;
+            }
+
+            .desktop--office-dev {
+                grid-area: dev;
+            }
+
         }
 
 

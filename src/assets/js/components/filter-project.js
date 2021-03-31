@@ -6,7 +6,8 @@ let commercial = document.querySelector('.category-commercial');
 let hospitalite = document.querySelector('.category-hospitalite');
 let residentiel = document.querySelector('.category-residentiel');
 
-let toutVoir = document.querySelector('#all-projects');
+let toutVoirDesktop = document.querySelector('.header-category #all-projects');
+let toutVoirMobile = document.querySelector('.navigation--projects #all-projects');
 let projectsItem = document.querySelectorAll('.grid-item');
 let headerCategoryItems = document.querySelectorAll('.category-item');
 
@@ -84,8 +85,17 @@ headerCategoryItems.forEach( item => {
 });
 
 // TOUT VOIR
-if ( home || archive ) {
-    toutVoir.addEventListener( 'click', () => {
+if ( home || archive ){
+    toutVoirDesktop.addEventListener( 'click', () => {
+        // remove is-filtered class from grid-item
+        projectsItem.forEach( project => {
+            if ( project.classList.contains('is-filtered') || project.classList.contains('grid-item-selected') ) {
+                project.classList.remove('is-filtered');
+                project.classList.remove('grid-item-selected');
+            }
+        });
+    });
+    toutVoirMobile.addEventListener( 'click', () => {
         // remove is-filtered class from grid-item
         projectsItem.forEach( project => {
             if ( project.classList.contains('is-filtered') || project.classList.contains('grid-item-selected') ) {

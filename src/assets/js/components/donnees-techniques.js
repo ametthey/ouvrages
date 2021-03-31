@@ -3,22 +3,25 @@ const donnes = document.querySelector('.single-grid--footer-container-left');
 const donnesButton = document.querySelector('.donnees-techniques-button');
 const donnesClose = document.querySelector('.single-grid--footer-container-left img');
 const donnesFooter = document.querySelector('.single-grid--footer-fake');
+const swiperLeftButton = document.querySelector('.swiper-button-prev');
 
-
-// DONNEES TECHNIQUES BUTTON
+// On clique sur données techniques et on ouvre le bandeau pour voir les données
 if ( donnesButton ) {
     donnesButton.addEventListener( 'click', (e) => {
         e.preventDefault();
         donnes.classList.toggle('active');
         donnesFooter.classList.toggle('active');
+        swiperLeftButton.classList.add('-is-covered');
+
     });
 }
 
-// DONNEES TECHNIQUES CLOSE BUTTON
+// On clique sur la croix dans le bandeau données techniques pour fermer le bandeau
 if ( donnesClose ) {
     donnesClose.addEventListener( 'click', (e) => {
         e.preventDefault();
         donnes.classList.remove('active');
         donnesFooter.classList.remove('active');
+        swiperLeftButton.classList.remove('-is-covered');
     });
 }

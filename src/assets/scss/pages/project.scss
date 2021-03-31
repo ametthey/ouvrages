@@ -1,0 +1,33 @@
+.single-project {
+    .logo--container {
+        .logo--title {
+            &:first-child {
+
+                @include respond(tablet){
+                    display: none;
+                }
+            }
+
+            &:last-child {
+                @include respond(tablet) {
+                    width: 100%;
+                }
+
+                h2 {
+
+                    @include respond(tablet) {
+                        text-align: center !important;
+                        width: 80vw !important;
+                    }
+                }
+            }
+        }
+
+        span {
+
+            @include respond(tablet) {
+                display: none;
+            }
+        }
+    }
+}
