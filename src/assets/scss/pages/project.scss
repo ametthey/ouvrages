@@ -1,4 +1,14 @@
 .single-project {
+    .navigation--projects {
+        span {
+            display: none !important;
+        }
+    }
+
+    #office-mobile {
+        top: 115px !important;
+    }
+
     .logo--container {
         .logo--title {
             &:first-child {
@@ -17,10 +27,15 @@
 
                     @include respond(tablet) {
                         text-align: center !important;
-                        width: 80vw !important;
+                        width: 100% !important;
                     }
                 }
             }
+        }
+
+        @include respond(tablet) {
+            // Show the logo on mobile
+            display: block !important;
         }
 
         span {

@@ -28,7 +28,7 @@
                 @include flex(center, center, column, center, space-between, row );
                 height: 62px;
                 overflow: scroll;
-                padding: $ratio;
+                // padding: $ratio;
                 position: absolute;
                 transition: all 0.325s $easing;
                 width: 50vw;
@@ -73,7 +73,8 @@
                             }
 
                             & > img {
-                                top: calc( #{$ratio} + 62px );
+                                // top: calc( #{$ratio} + 62px );
+                                top: 62px;
                             }
 
                             & > .next-post {
@@ -86,6 +87,7 @@
                 & > a {
                     align-self: start;
                     font-size: $p;
+                    padding: $ratio;
 
                     @include respond(tablet) {
                         align-self: center;
@@ -96,7 +98,7 @@
                 & > img {
                     cursor: pointer;
                     display: none;
-                    padding-right: $ratio;
+                    padding: $ratio;
                     position: absolute;
                     right: 0;
 
@@ -124,13 +126,15 @@
                 .single-grid--donnees-techniques {
                     @include flex(flex-start, flex-start, column, flex-start, space-between, column );
                     display: none;
-                    padding: 0 11px 11px;
+                    // padding: 0 11px 11px;
+                    padding: 0;
                     position: absolute;
-                    top: 62px;
-                    // width: 50vw;
+                    // top: 62px;
+                    top: 60px; // cf. dropbox doc ouvrage-edit-2.pdf page3
+                    width: 50vw;
                     // overflow: scroll;
 
-                    width: calc( 50vw - 26px );
+                    // width: calc( 50vw - 26px );
                     left: 0;
 
                     @include respond(tablet) {
@@ -139,7 +143,12 @@
 
 
                     .single-grid--donnes-techniques-container {
-                        @include flex(flex-start, flex-start, row, flex-start, space-between, row );
+                        // @include flex(flex-start, flex-start, row, flex-start, space-between, row );
+                        @include grid( repeat(6, 1fr), 1fr, $ratio, $ratio,  repeat(4, 1fr), 1fr ,$ratio, $ratio);
+                        grid-template-areas:
+                            'title info info info info info';
+                        padding: $ratio;
+
                         width: 100%;
 
                         &:last-child {
@@ -154,17 +163,20 @@
                         }
 
                         .single-grid--title {
-                            width: 40%;
+                            grid-area: title;
+
+                            // width: 40%;
 
                             @include respond(tablet) {
-                                width: 30%;
+                                // width: 30%;
                             }
                         }
                         .single-grid--information {
-                            width: 60%;
+                            grid-area: info;
+                            // width: 60%;
 
                             @include respond(tablet) {
-                                width: 70%;
+                                // width: 70%;
                             }
                         }
                     }
@@ -178,7 +190,8 @@
                     bottom: 0;
                     height: 62px;
                     width: 50vw;
-                    position: absolute;
+                    // position: absolute;
+                    position: fixed;
 
                     @include respond(tablet) {
                         width: 100vw;
@@ -199,6 +212,7 @@
 
                     @include respond(tablet) {
                         display: block;
+                        padding: $ratio;
                     }
                 }
             }

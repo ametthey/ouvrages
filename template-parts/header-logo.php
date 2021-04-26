@@ -17,5 +17,8 @@
             </h2>
         </div>
     </div>
-    <!-- </a> -->
+
+    <div class="logo--container-mobile">
+        <a href="<?php echo get_home_url(); ?>">Ouvrage | Paris</a>
+    </div>
 </div>

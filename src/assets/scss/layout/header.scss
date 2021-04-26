@@ -4,11 +4,14 @@
 
 #masthead {
     height: auto;
+    display: block;
     position: relative;
+    // will-change:transform;
 
     @include respond(tablet) {
-        position: sticky;
-        top: 0;
+        // position: sticky;
+        // position: -webkit-sticky;
+        // top: 0;
     }
 
     &.site-header-single {
@@ -55,6 +58,7 @@
         height: 62px;
         padding: $ratio;
         position: sticky;
+        position: -webkit-sticky;
         top: -1px;
         // z-index: 3;
         z-index: 4; // Pour que le bandeau bureau passe au dessus des filtres
@@ -97,6 +101,10 @@
                     width: 100vw;
 
                     overflow: auto;
+
+
+                    // Juste le temps de débugger le filtre en mobile
+                    display: none;
 
                     // NAV ACTIVE
                     p {
@@ -254,9 +262,12 @@
                 width: 75vw;
             }
 
-            // a {
             .logo--container {
                 @include flex( center, center, row, center, center, row );
+
+                @include respond(tablet) {
+                    display: none;
+                }
 
                 // OUVRAGE
                 .logo--title {
@@ -299,11 +310,11 @@
                 span {
                     border-right-color: #000;
                     border-right-style: solid;
-                    border-right-width: 2px;
+                    border-right-width: 1px;
                     height: $big;
                     overflow: hidden;
-                    width: 2px;
-                    margin: 0 10px;
+                    width: 1px;
+                    margin: 0 5px;
 
                     @include respond(tablet) {
                         border-right-width: 1px;
@@ -314,6 +325,16 @@
                     }
                 }
             }
+
+            .logo--container-mobile {
+                display: none;
+                text-align: center;
+
+                @include respond(tablet) {
+                    display: block;
+                }
+
+            }
         }
 
         // OFFICE COLLAPSE
@@ -321,10 +342,11 @@
             background-color: $bg;
             border: none;
             // @include grid( repeat(12, 1fr), 1fr, $ratio, $ratio,  repeat(4, 1fr), 1fr ,$ratio, $ratio);
+            @include grid( repeat(12, 1fr), 1fr, $ratio, $ratio,  repeat(4, 1fr), 1fr ,$ratio, $ratio);
 
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: 1fr;
+            // display: grid;
+            // grid-template-columns: repeat(12, 1fr);
+            // grid-template-rows: 1fr;
 
             // @include respond(tablet) {
             //     grid-template-columbs:
@@ -343,7 +365,7 @@
             overflow: hidden;
             position: absolute;
             top: 62px;
-            transition: max-height 0.2s $easing;
+            transition: max-height 1.2s $easing;
             z-index: 1;
 
             &.active {
@@ -493,6 +515,7 @@
         height: 62px;
         padding: $ratio;
         position: sticky;
+        position: -webkit-sticky;
         top: 61px;
         width: 100%;
         z-index: 3;

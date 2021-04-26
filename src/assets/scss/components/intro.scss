@@ -21,8 +21,12 @@
     }
 
     .intro--texts {
-        @include flex(center, center, row, center, center, column);
+        @include flex(center, center, row, center, center, row);
         height: auto;
+
+        @include respond(tablet) {
+            display: none;
+        }
 
         h1 {
             color: $bg;
@@ -31,16 +35,20 @@
 
             @include respond(tablet) {
                 font-size: $small;
-                line-height: $small;
-                text-align: center;
+                // line-height: $small;
+                // text-align: center;
             }
+
+            // &.intro--logo {
+            //     text-align: left !important;
+            // }
 
             // Uniquement pour le PARIS en statique en attendant la validation de l'animation
             &.intro--paris {
                 text-align: left;
 
                 @include respond(tablet) {
-                    text-align: center;
+                    text-align: left;
                 }
             }
         }
@@ -53,8 +61,8 @@
             width: 1px;
 
             @include respond(tablet) {
-                height: 0.5px;
-                width: 100px;
+                height: $small;
+                // width: 100px;
             }
         }
 
@@ -62,7 +70,8 @@
             align-items: flex-start;
             display: flex;
             flex-direction: column;
-            height: $big;
+            // height: $big;
+            height: $huge;
             overflow: hidden;
             position: relative;
             width: calc( 50vw - 10.5px );
@@ -88,8 +97,10 @@
                 }
 
                 h1 {
-                    font-size: $big;
-                    line-height: $big;
+                    // font-size: $big;
+                    font-size: $huge;
+                    line-height: $huge;
+                    // line-height: $big;
                     text-align: left;
 
                     @include respond(tablet) {
@@ -101,6 +112,19 @@
                     }
                 }
             }
+        }
+    }
+
+    .intro--animations-mobile {
+        display: none;
+
+        @include respond(tablet) {
+            display: block;
+        }
+
+        h1 {
+            color: $bg;
+            font-size: $small;
         }
     }
 }

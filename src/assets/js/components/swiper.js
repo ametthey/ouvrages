@@ -5,7 +5,7 @@ const swiperContainerLeft = document.querySelector('.swiper-container-left');
 const swiperContainerRight = document.querySelector('.swiper-container-right');
 if ( swiperContainerLeft && swiperContainerRight ) {
     let swiperSettings = {
-        allowTouchMove: false,
+        // allowTouchMove: false,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',

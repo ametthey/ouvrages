@@ -14,10 +14,33 @@ let headerCategoryItems = document.querySelectorAll('.category-item');
 let categoryClassesBureaux = ['hospitalite', 'commercial', 'residentiel', 'commercial'];
 
 headerCategoryItems.forEach( item => {
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (e) => {
+
+        const navProjects = document.querySelector('.navigation-projects');
+        const navOffice = document.querySelector('.navigation--office');
+        const navHamburger = document.querySelector('.navigation--hamburger');
+
+        if ( navProjects ) {
+            console.log(navProjects.getAttribute('class'));
+            console.log(navOffice.getAttribute('class'));
+            console.log(navHamburger.getAttribute('class'));
+            if ( navProjects.classList.contains('active') && navOffice.classList.contains('active') && navHamburger.classList.contains('active')  ) {
+                console.log('navigations-projects is active');
+                console.log('navigations-office is active');
+                console.log('navigations-hamburger is active');
+            }
+        }
+
+
+        if ( navProjects ) {
+            if ( navProjects.classList.contains('active') ) {
+                // consogtgtgtgt
+            }
+        }
 
         // BUREAUX
         if ( item.classList.contains('category-bureaux') ) {
+
             projectsItem.forEach( gridItem => {
 
                 // REMOVE IS FILTERED CLASS IF PRESENT
@@ -33,6 +56,7 @@ headerCategoryItems.forEach( item => {
                     gridItem.classList.add('is-filtered');
                 }
             });
+
 
         // COMMERCIAL
         } else if ( item.classList.contains('category-commercial') ) {

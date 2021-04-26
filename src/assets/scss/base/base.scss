@@ -12,7 +12,16 @@
     & :after {
         box-sizing: inherit;
     }
+
+    outline: none;
+
+
+    &::selection {
+        background:  #ededed;
+    }
 }
+
+
 
 html {
     box-sizing: border-box;
