@@ -25,7 +25,7 @@
     </p>
 
     <!-- CRÉDITS CRÉATION DU SITE -->
-    <p class="desktop--office-cm"><a href="http://current-matters.ltd/" target="_blank">Current Matters</a> <br> <a href="perimetre.studio" target="_blank">Albin Metthey @perimetre.studio </a></p>
+    <p class="desktop--office-cm"><a href="mailto:info@current-matters.ltd" target="_blank">Current Matters</a> <br> <a href="perimetre.studio" target="_blank">Albin Metthey @perimetre.studio </a></p>
 
     <!-- Colonne de Gauche -->
     <p class="desktop--office-contact">Contact</p>

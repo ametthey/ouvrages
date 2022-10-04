@@ -20,26 +20,9 @@ headerCategoryItems.forEach( item => {
         const navOffice = document.querySelector('.navigation--office');
         const navHamburger = document.querySelector('.navigation--hamburger');
 
-        if ( navProjects ) {
-            console.log(navProjects.getAttribute('class'));
-            console.log(navOffice.getAttribute('class'));
-            console.log(navHamburger.getAttribute('class'));
-            if ( navProjects.classList.contains('active') && navOffice.classList.contains('active') && navHamburger.classList.contains('active')  ) {
-                console.log('navigations-projects is active');
-                console.log('navigations-office is active');
-                console.log('navigations-hamburger is active');
-            }
-        }
-
-
-        if ( navProjects ) {
-            if ( navProjects.classList.contains('active') ) {
-                // consogtgtgtgt
-            }
-        }
-
         // BUREAUX
         if ( item.classList.contains('category-bureaux') ) {
+            console.log( 'categorie bureaux' );
 
             projectsItem.forEach( gridItem => {
 
@@ -57,9 +40,27 @@ headerCategoryItems.forEach( item => {
                 }
             });
 
+            // Mobile - Close the header menu when we clicked on a category element
+            if ( item.closest('.navigation--projects') ) {
 
-        // COMMERCIAL
+                // Hamburger Menu Remove all styles if present
+                const officeContainer = document.querySelector('.header-navigation--office');
+                const navProjects = document.querySelector('.navigation--projects');
+                const navOffice = document.querySelector('.navigation--office ');
+                const hamburgerButton = document.querySelector('button.hamburger');
+
+                if ( navProjects.classList.contains('active') && navOffice.classList.contains('active') && hamburgerButton.classList.contains('active') ) {
+                    navProjects.classList.remove('active');
+                    navOffice.classList.remove('active');
+                    hamburgerButton.classList.remove('active');
+                }
+            }
+
+
+            // COMMERCIAL
         } else if ( item.classList.contains('category-commercial') ) {
+            console.log( 'categorie commercial' );
+
             projectsItem.forEach( gridItem => {
                 if ( gridItem.classList.contains('is-filtered') ) {
                     gridItem.classList.remove('is-filtered');
@@ -74,7 +75,25 @@ headerCategoryItems.forEach( item => {
                 }
             });
 
+            // Mobile - Close the header menu when we clicked on a category element
+            if ( item.closest('.navigation--projects') ) {
+
+                // Hamburger Menu Remove all styles if present
+                const officeContainer = document.querySelector('.header-navigation--office');
+                const navProjects = document.querySelector('.navigation--projects');
+                const navOffice = document.querySelector('.navigation--office ');
+                const hamburgerButton = document.querySelector('button.hamburger');
+
+                if ( navProjects.classList.contains('active') && navOffice.classList.contains('active') && hamburgerButton.classList.contains('active') ) {
+                    navProjects.classList.remove('active');
+                    navOffice.classList.remove('active');
+                    hamburgerButton.classList.remove('active');
+                }
+            }
+
         } else if ( item.classList.contains('category-hospitalite') ) {
+            console.log( 'categorie hospitalite' );
+
             projectsItem.forEach( gridItem => {
                 if ( gridItem.classList.contains('is-filtered') ) {
                     gridItem.classList.remove('is-filtered');
@@ -88,6 +107,22 @@ headerCategoryItems.forEach( item => {
                     gridItem.classList.add('is-filtered');
                 }
             });
+
+            // Mobile - Close the header menu when we clicked on a category element
+            if ( item.closest('.navigation--projects') ) {
+
+                // Hamburger Menu Remove all styles if present
+                const officeContainer = document.querySelector('.header-navigation--office');
+                const navProjects = document.querySelector('.navigation--projects');
+                const navOffice = document.querySelector('.navigation--office ');
+                const hamburgerButton = document.querySelector('button.hamburger');
+
+                if ( navProjects.classList.contains('active') && navOffice.classList.contains('active') && hamburgerButton.classList.contains('active') ) {
+                    navProjects.classList.remove('active');
+                    navOffice.classList.remove('active');
+                    hamburgerButton.classList.remove('active');
+                }
+            }
 
         }
         else if ( item.classList.contains('category-residentiel') ) {
@@ -104,6 +139,22 @@ headerCategoryItems.forEach( item => {
                     gridItem.classList.add('is-filtered');
                 }
             });
+
+            // Mobile - Close the header menu when we clicked on a category element
+            if ( item.closest('.navigation--projects') ) {
+
+                // Hamburger Menu Remove all styles if present
+                const officeContainer = document.querySelector('.header-navigation--office');
+                const navProjects = document.querySelector('.navigation--projects');
+                const navOffice = document.querySelector('.navigation--office ');
+                const hamburgerButton = document.querySelector('button.hamburger');
+
+                if ( navProjects.classList.contains('active') && navOffice.classList.contains('active') && hamburgerButton.classList.contains('active') ) {
+                    navProjects.classList.remove('active');
+                    navOffice.classList.remove('active');
+                    hamburgerButton.classList.remove('active');
+                }
+            }
         }
     });
 });
@@ -127,5 +178,17 @@ if ( home || archive ){
                 project.classList.remove('grid-item-selected');
             }
         });
+
+        // Hamburger Menu Remove all styles if present
+        const officeContainer = document.querySelector('.header-navigation--office');
+        const navProjects = document.querySelector('.navigation--projects');
+        const navOffice = document.querySelector('.navigation--office ');
+        const hamburgerButton = document.querySelector('button.hamburger');
+
+        if ( navProjects.classList.contains('active') && navOffice.classList.contains('active') && hamburgerButton.classList.contains('active') ) {
+            navProjects.classList.remove('active');
+            navOffice.classList.remove('active');
+            hamburgerButton.classList.remove('active');
+        }
     });
 }

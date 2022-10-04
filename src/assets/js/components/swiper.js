@@ -10,8 +10,12 @@ if ( swiperContainerLeft && swiperContainerRight ) {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
         speed: 900,
-     };
+    };
     let swiperRightSettings = {
         allowTouchMove: false,
         speed: 900,

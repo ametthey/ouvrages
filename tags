@@ -1,0 +1,217 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BundleAnalyzerPlugin	gulpfile.babel.js	/^const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;$/;"	V
+MySwiperLeft	src/assets/js/components/swiper.js	/^    let MySwiperLeft = new Swiper( swiperContainerLeft, swiperSettings  );$/;"	V
+MySwiperRight	src/assets/js/components/swiper.js	/^    let MySwiperRight = new Swiper( swiperContainerRight, swiperRightSettings );$/;"	V
+PRODUCTION	gulpfile.babel.js	/^const PRODUCTION = yargs.argv.prod;$/;"	V
+PostMenuOrderUtils	lib/first-last.php	/^class PostMenuOrderUtils {$/;"	c
+R_Debug	lib/r-debug.php	/^class R_Debug {$/;"	c
+_themename_admin_assets	lib/enqueue-assets.php	/^\/\/ function _themename_admin_assets() {$/;"	f
+_themename_assets	lib/enqueue-assets.php	/^function _themename_assets() {$/;"	f
+_themename_custom_post_type	lib/custom-post-type.php	/^function _themename_custom_post_type() {$/;"	f
+_themename_defer_parsing_of_js	lib/enqueue-assets.php	/^function _themename_defer_parsing_of_js( $url ) {$/;"	f
+_themename_footer_message_uppercase	functions.php	/^function _themename_footer_message_uppercase( $message ) {$/;"	f
+_themename_image_configuration	lib/images.php	/^function _themename_image_configuration() {$/;"	f
+_themename_login_assets	lib/enqueue-assets.php	/^function _themename_login_assets() {$/;"	f
+_themename_no_more_jquery	lib/enqueue-assets.php	/^function _themename_no_more_jquery(){$/;"	f
+_themename_remove_options_menu	lib/custom-admin-bar.php	/^function _themename_remove_options_menu(){$/;"	f
+_themename_taxonomy_skill	lib/custom-taxonomy.php	/^function _themename_taxonomy_skill() {$/;"	f
+_themename_widgets_init	lib/sidebar.php	/^    function _themename_widgets_init() {$/;"	f
+allowTouchMove	src/assets/js/components/swiper.js	/^        allowTouchMove: false,$/;"	P
+archive	src/assets/js/components/filter-project.js	/^let archive = document.querySelector('.archive');$/;"	V
+args	header-home.php	/^                        $args = array($/;"	v
+args	header-project.php	/^                        $args = array($/;"	v
+args	lib/custom-post-type.php	/^	$args = array($/;"	v
+args	lib/custom-taxonomy.php	/^    $args = array($/;"	v
+args	lib/first-last.php	/^    $args =[$/;"	v
+args	single-project.php	/^        $args = array($/;"	v
+args	template-parts/home-introduction.php	/^                $args = array($/;"	v
+backtrace	lib/r-debug.php	/^			$backtrace = explode( ',', $backtrace );$/;"	v
+backtrace	lib/r-debug.php	/^			$backtrace = trim( array_pop( $backtrace ) );$/;"	v
+build	gulpfile.babel.js	/^export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, copy));$/;"	E
+bundle	gulpfile.babel.js	/^export const bundle = gulp.series(build, compress);$/;"	E
+bureaux	src/assets/js/components/filter-project.js	/^let bureaux = document.querySelector('.category-bureaux');$/;"	V
+callback	lib/r-debug.php	/^				$callback = $function['function'];$/;"	v
+categories	header-home.php	/^                        $categories = get_terms( array($/;"	v
+categories	header-home.php	/^                    $categories = get_terms( array($/;"	v
+categories	header-project.php	/^                        $categories = get_terms( array($/;"	v
+categories	header-project.php	/^                    $categories = get_terms( array($/;"	v
+categories	header-single.php	/^                        $categories = get_terms( array($/;"	v
+categoryClassesBureaux	src/assets/js/components/filter-project.js	/^let categoryClassesBureaux = ['hospitalite', 'commercial', 'residentiel', 'commercial'];$/;"	A
+class	lib/r-debug.php	/^					$class = new ReflectionClass( $callback );$/;"	v
+clean	gulpfile.babel.js	/^export const clean = () => del(['dist','packaged']);$/;"	E
+clickable	src/assets/js/components/swiper.js	/^            clickable: true,$/;"	P
+closure	lib/r-debug.php	/^					$closure = new ReflectionFunction( $callback );$/;"	v
+commercial	src/assets/js/components/filter-project.js	/^let commercial = document.querySelector('.category-commercial');$/;"	V
+compress	gulpfile.babel.js	/^export const bundle = gulp.series(build, compress);$/;"	E
+compress	gulpfile.babel.js	/^export const compress = () => {$/;"	E
+constants	lib/r-debug.php	/^			$constants = $temp;$/;"	v
+constants	lib/r-debug.php	/^		$constants = get_defined_constants();$/;"	v
+copy	gulpfile.babel.js	/^export const copy = () => {$/;"	E
+cron	lib/r-debug.php	/^		$cron = _get_cron_array();$/;"	v
+cssFile	lib/enqueue-assets.php	/^    \/\/ $cssFile = get_stylesheet_directory_uri() .'\/bundle.css';$/;"	v
+cssFilePath	lib/enqueue-assets.php	/^    \/\/ $cssFilePath = get_template_directory().'\/bundle.css';$/;"	v
+dequeue_my_css	lib/cleanup.php	/^function dequeue_my_css() {$/;"	f
+dest	gulpfile.babel.js	/^        dest: 'dist\/assets'$/;"	P
+dest	gulpfile.babel.js	/^        dest: 'dist\/assets\/css'$/;"	P
+dest	gulpfile.babel.js	/^        dest: 'dist\/assets\/images'$/;"	P
+dest	gulpfile.babel.js	/^        dest: 'dist\/assets\/js'$/;"	P
+dest	gulpfile.babel.js	/^        dest: 'packaged'$/;"	P
+dev	gulpfile.babel.js	/^export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), serve, watch);$/;"	E
+devtool	gulpfile.babel.js	/^            devtool: !PRODUCTION ? 'inline-source-map' : false,$/;"	P
+disable_emojis	lib/cleanup.php	/^function disable_emojis() {$/;"	f
+disable_emojis_remove_dns_prefetch	lib/cleanup.php	/^function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {$/;"	f
+disable_emojis_tinymce	lib/cleanup.php	/^function disable_emojis_tinymce( $plugins ) {$/;"	f
+donnes	src/assets/js/components/donnees-techniques.js	/^const donnes = document.querySelector('.single-grid--footer-container-left');$/;"	V
+donnesButtons	src/assets/js/components/donnees-techniques.js	/^const donnesButtons = document.querySelectorAll('.donnees-techniques-button');$/;"	V
+donnesClose	src/assets/js/components/donnees-techniques.js	/^const donnesClose = document.querySelector('.single-grid--footer-container-left img');$/;"	V
+donnesFooter	src/assets/js/components/donnees-techniques.js	/^const donnesFooter = document.querySelector('.single-grid--footer-fake');$/;"	V
+dump	lib/r-debug.php	/^	static function dump() {$/;"	f
+dump_hook	lib/r-debug.php	/^	static function dump_hook( $tag, $hook ) {$/;"	f
+duration	lib/r-debug.php	/^			$duration  = sprintf( '%f', $duration );$/;"	v
+el	src/assets/js/components/swiper.js	/^            el: '.swiper-pagination',$/;"	P
+emoji_svg_url	lib/cleanup.php	/^        $emoji_svg_url = apply_filters( 'emoji_svg_url', 'https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/' );$/;"	v
+exclude	gulpfile.babel.js	/^                        exclude: \/(node_modules|bower_components)\/,$/;"	P
+explain_query	lib/r-debug.php	/^	static function explain_query( $query = '' ) {$/;"	f
+filename	gulpfile.babel.js	/^                filename: '[name].js',$/;"	P
+filter	lib/r-debug.php	/^	static function list_constants( $filter = false ) {$/;"	v
+filter	lib/r-debug.php	/^	static function list_hooks( $filter = false ) {$/;"	v
+flexbox	gulpfile.babel.js	/^                    flexbox: true,$/;"	P
+footer_message	footer-home.php	/^                <?php $footer_message = '&copy;' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ); ?>$/;"	v
+footer_message	footer-message.php	/^                    $footer_message = '&copy;' . date( 'Y' ) . ' ' . get_bloginfo( 'name' );$/;"	v
+footer_message	footer.php	/^                <?php $footer_message = '&copy;' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ); ?>$/;"	v
+from	lib/r-debug.php	/^						echo 'anonymous class from ' . $class->getFileName() . '::' . $class->getStartLine();$/;"	c
+getNextPostByMenuOrder	lib/first-last.php	/^public static function getNextPostByMenuOrder($postType, $postID){$/;"	f
+getPostsByMenuOrder	lib/first-last.php	/^public static function getPostsByMenuOrder($postType){$/;"	f
+getPreviousPostByMenuOrder	lib/first-last.php	/^public static function getPreviousPostByMenuOrder($postType, $postID){$/;"	f
+grid	gulpfile.babel.js	/^                    grid: true,$/;"	P
+gulp	gulpfile.babel.js	/^export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, copy));$/;"	E
+gulp	gulpfile.babel.js	/^export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), serve, watch);$/;"	E
+gzip	gulpfile.babel.js	/^            gzip: true,$/;"	P
+hamburgerButton	src/assets/js/components/filter-project.js	/^                const hamburgerButton = document.querySelector('button.hamburger');$/;"	V
+hamburgerButton	src/assets/js/components/filter-project.js	/^        const hamburgerButton = document.querySelector('button.hamburger');$/;"	V
+hamburgerButton	src/assets/js/components/hamburger-menu.js	/^const hamburgerButton = document.querySelector('button.hamburger');$/;"	V
+headerCategory	src/assets/js/components/visible-header.js	/^const headerCategory = document.querySelector('.header-category');$/;"	V
+headerCategoryItems	src/assets/js/components/filter-project.js	/^let headerCategoryItems = document.querySelectorAll('.category-item');$/;"	V
+home	src/assets/js/components/filter-project.js	/^let home = document.querySelector('.home');$/;"	V
+home_projects	header-home.php	/^                        $home_projects = new WP_Query( $args );$/;"	v
+home_projects	header-project.php	/^                        $home_projects = new WP_Query( $args );$/;"	v
+hook	lib/r-debug.php	/^			$hook = $hook->callbacks;$/;"	v
+hook	lib/r-debug.php	/^			$hook = 'all';$/;"	v
+hook	lib/r-debug.php	/^	static function list_live_hooks( $hook = false ) {$/;"	v
+hooks	lib/r-debug.php	/^		$hooks       = $wp_filter;$/;"	v
+hospitalite	src/assets/js/components/filter-project.js	/^let hospitalite = document.querySelector('.category-hospitalite');$/;"	V
+image_home	template-parts/content-single-project.php	/^                            <?php $image_home = get_sub_field( 'image' ); ?>$/;"	v
+images	gulpfile.babel.js	/^export const images = () => {$/;"	E
+input	lib/r-debug.php	/^	static function list_hook_details( $input = null ) {$/;"	v
+jsFile	lib/enqueue-assets.php	/^    \/\/ \/\/ $jsFile = get_stylesheet_directory_uri() .'\/assets\/js\/main-min.js';$/;"	v
+jsFilePath	lib/enqueue-assets.php	/^    \/\/ \/\/ $jsFilePath = get_template_directory().'\/assets\/js\/main-min.js';$/;"	v
+key	lib/first-last.php	/^    foreach($posts as $key => $value) {$/;"	v
+key	lib/r-debug.php	/^			foreach ( $constants as $key => $constant ) {$/;"	v
+labels	lib/custom-post-type.php	/^	$labels = array($/;"	v
+labels	lib/custom-taxonomy.php	/^    $labels = array($/;"	v
+list_constants	lib/r-debug.php	/^	static function list_constants( $filter = false ) {$/;"	f
+list_cron	lib/r-debug.php	/^	static function list_cron() {$/;"	f
+list_hook_details	lib/r-debug.php	/^	static function list_hook_details( $input = null ) {$/;"	f
+list_hooks	lib/r-debug.php	/^	static function list_hooks( $filter = false ) {$/;"	f
+list_live_hooks	lib/r-debug.php	/^	static function list_live_hooks( $hook = false ) {$/;"	f
+list_performance	lib/r-debug.php	/^	static function list_performance( $visible = false ) {$/;"	f
+list_plugins	lib/r-debug.php	/^	static function list_plugins() {$/;"	f
+list_post	lib/r-debug.php	/^	static function list_post( $post_id = null ) {$/;"	f
+list_queries	lib/r-debug.php	/^	static function list_queries() {$/;"	f
+loader	gulpfile.babel.js	/^                                loader: 'babel-loader',$/;"	P
+mastHead	src/assets/js/components/visible-header.js	/^const mastHead = document.querySelector('#masthead');$/;"	V
+mode	gulpfile.babel.js	/^            mode: PRODUCTION ? 'production' : 'development', \/\/ add this$/;"	P
+name	lib/r-debug.php	/^					$name  = $class->getName();$/;"	v
+navHamburger	src/assets/js/components/filter-project.js	/^        const navHamburger = document.querySelector('.navigation--hamburger');$/;"	V
+navOffice	src/assets/js/components/filter-project.js	/^                const navOffice = document.querySelector('.navigation--office ');$/;"	V
+navOffice	src/assets/js/components/filter-project.js	/^        const navOffice = document.querySelector('.navigation--office ');$/;"	V
+navOffice	src/assets/js/components/filter-project.js	/^        const navOffice = document.querySelector('.navigation--office');$/;"	V
+navOffice	src/assets/js/components/hamburger-menu.js	/^const navOffice = document.querySelector('.navigation--office ');$/;"	V
+navProjects	src/assets/js/components/filter-project.js	/^                const navProjects = document.querySelector('.navigation--projects');$/;"	V
+navProjects	src/assets/js/components/filter-project.js	/^        const navProjects = document.querySelector('.navigation--projects');$/;"	V
+navProjects	src/assets/js/components/filter-project.js	/^        const navProjects = document.querySelector('.navigation-projects');$/;"	V
+navProjects	src/assets/js/components/hamburger-menu.js	/^const navProjects = document.querySelector('.navigation--projects');$/;"	V
+new_message	functions.php	/^    $new_message =  strtoupper( $message );$/;"	v
+nextEl	src/assets/js/components/swiper.js	/^            nextEl: '.swiper-button-next',$/;"	P
+nextPost	lib/first-last.php	/^            $nextPost = $posts[$key] !== end($posts) ? $posts[$key + 1] : $posts[0];$/;"	v
+nextPost	lib/first-last.php	/^    $nextPost = null;$/;"	v
+notify	gulpfile.babel.js	/^        notify: false$/;"	P
+officeCollapse	src/assets/js/components/collapse-navigation.js	/^const officeCollapse = document.querySelector('.navigation--office');$/;"	V
+officeContainer	src/assets/js/components/collapse-navigation.js	/^const officeContainer = document.querySelector('.header-navigation--office');$/;"	V
+officeContainer	src/assets/js/components/filter-project.js	/^                const officeContainer = document.querySelector('.header-navigation--office');$/;"	V
+officeContainer	src/assets/js/components/filter-project.js	/^        const officeContainer = document.querySelector('.header-navigation--office');$/;"	V
+officeContainer	src/assets/js/components/hamburger-menu.js	/^const officeContainer = document.querySelector('.header-navigation--office');$/;"	V
+offset	lib/r-debug.php	/^		$offset = get_option( 'gmt_offset' ) * 3600;$/;"	v
+output	lib/r-debug.php	/^		$output = '';$/;"	v
+path	gulpfile.babel.js	/^const path = {$/;"	O
+plugins	gulpfile.babel.js	/^            plugins: [$/;"	P
+post_id	lib/r-debug.php	/^			$post_id = get_the_ID();$/;"	v
+post_id	lib/r-debug.php	/^	static function list_post( $post_id = null ) {$/;"	v
+posts	lib/first-last.php	/^    $posts = get_posts($args);$/;"	v
+posts	lib/first-last.php	/^    $posts = self::getPostsByMenuOrder($postType);$/;"	v
+posts_link_attributes_2	functions.php	/^function posts_link_attributes_2() {$/;"	f
+preset	gulpfile.babel.js	/^                    preset: "advanced",$/;"	P
+presets	gulpfile.babel.js	/^                                    presets: ['@babel\/preset-env'],$/;"	P
+pretty	gulpfile.babel.js	/^            pretty: true,$/;"	P
+prevEl	src/assets/js/components/swiper.js	/^            prevEl: '.swiper-button-prev',$/;"	P
+prevPost	lib/first-last.php	/^            $prevPost = $key !== 0 ? $posts[$key - 1] : end($posts);$/;"	v
+prevPost	lib/first-last.php	/^    $prevPost = null;$/;"	v
+priority	lib/r-debug.php	/^		foreach ( $hook as $priority => $functions ) {$/;"	v
+projects	single-project.php	/^        $projects = new WP_Query( $args );$/;"	v
+projects	template-parts/home-introduction.php	/^                $projects = new WP_Query( $args );$/;"	v
+projectsItem	src/assets/js/components/filter-project.js	/^let projectsItem = document.querySelectorAll('.grid-item');$/;"	V
+proxy	gulpfile.babel.js	/^        proxy: "old-ouvrage.yo",$/;"	P
+query	lib/r-debug.php	/^			$query = $wpdb->last_query;$/;"	v
+query	lib/r-debug.php	/^	static function explain_query( $query = '' ) {$/;"	v
+reload	gulpfile.babel.js	/^export const reload = (done) => {$/;"	E
+remove_jquery_migrate	lib/enqueue-assets.php	/^function remove_jquery_migrate( $scripts ) {$/;"	f
+remove_menus	lib/custom-admin-bar.php	/^function remove_menus(){$/;"	f
+residentiel	src/assets/js/components/filter-project.js	/^let residentiel = document.querySelector('.category-residentiel');$/;"	V
+roles	lib/custom-admin-bar.php	/^    $roles = wp_get_current_user()->roles;$/;"	v
+rules	gulpfile.babel.js	/^                rules: [$/;"	P
+script	lib/enqueue-assets.php	/^        $script = $scripts->registered['jquery'];$/;"	v
+scripts	gulpfile.babel.js	/^export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, copy));$/;"	E
+scripts	gulpfile.babel.js	/^export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), serve, watch);$/;"	E
+scripts	gulpfile.babel.js	/^export const scripts = () => {$/;"	E
+serve	gulpfile.babel.js	/^export const serve = (done) => {$/;"	E
+server	gulpfile.babel.js	/^const server = browserSync.create();$/;"	V
+showFiles	gulpfile.babel.js	/^            showFiles: true,$/;"	P
+showTotal	gulpfile.babel.js	/^            showTotal: true,$/;"	P
+size	template-parts/content-single-project.php	/^                            <?php $size = 'full'; ?>$/;"	v
+skip_filter	lib/r-debug.php	/^		$skip_filter = empty( $filter );$/;"	v
+speed	src/assets/js/components/swiper.js	/^        speed: 900,$/;"	P
+src	gulpfile.babel.js	/^        src: 'src\/assets\/images\/**\/*.{jpg,jpeg,png,svg,gif,mp4,json}',$/;"	P
+src	gulpfile.babel.js	/^        src: ['**\/*', '!.DS_Store', '!node_modules{,\/**}', '!packaged{,\/**}', '!src{,\/**}', '!.babelrc' , '!gitignore' , '!gulpfile.babel.js' , '!package.json' , '!package-lock.json'],$/;"	P
+src	gulpfile.babel.js	/^        src: ['src\/assets\/**\/*', '!src\/assets\/{images,js,scss}', '!src\/assets\/{images,js,scss}\/**\/*'],$/;"	P
+src	gulpfile.babel.js	/^        src: ['src\/assets\/js\/main.js'],$/;"	P
+src	gulpfile.babel.js	/^        src: ['src\/assets\/scss\/bundle.scss', 'src\/assets\/scss\/admin.scss', 'src\/assets\/scss\/login.scss'],$/;"	P
+stat	lib/r-debug.php	/^		$stat = sprintf($/;"	v
+styles	gulpfile.babel.js	/^export const styles = () => {$/;"	E
+swiperContainerLeft	src/assets/js/components/swiper.js	/^const swiperContainerLeft = document.querySelector('.swiper-container-left');$/;"	V
+swiperContainerRight	src/assets/js/components/swiper.js	/^const swiperContainerRight = document.querySelector('.swiper-container-right');$/;"	V
+swiperLeftButton	src/assets/js/components/donnees-techniques.js	/^const swiperLeftButton = document.querySelector('.swiper-button-prev');$/;"	V
+swiperRightSettings	src/assets/js/components/swiper.js	/^    let swiperRightSettings = {$/;"	O
+swiperSettings	src/assets/js/components/swiper.js	/^    let swiperSettings = {$/;"	O
+tag	lib/r-debug.php	/^		$tag = current_filter();$/;"	v
+tag	lib/r-debug.php	/^		foreach ( $hooks as $tag => $hook ) {$/;"	v
+temp	lib/r-debug.php	/^			$temp = array();$/;"	v
+terms	template-parts/content-project.php	/^        $terms = get_the_terms($post->ID, 'categorie');$/;"	v
+test	gulpfile.babel.js	/^                        test: \/\\.js$\/,$/;"	P
+time	lib/r-debug.php	/^		foreach ( $cron as $time => $entry ) {$/;"	v
+title	gulpfile.babel.js	/^            title: 'Compress',$/;"	P
+title	gulpfile.babel.js	/^            title: 'Images',$/;"	P
+title	gulpfile.babel.js	/^            title: 'JavaScript',$/;"	P
+title	gulpfile.babel.js	/^            title: 'SASS',$/;"	P
+toutVoirDesktop	src/assets/js/components/filter-project.js	/^let toutVoirDesktop = document.querySelector('.header-category #all-projects');$/;"	V
+toutVoirMobile	src/assets/js/components/filter-project.js	/^let toutVoirMobile = document.querySelector('.navigation--projects #all-projects');$/;"	V
+urls	lib/cleanup.php	/^        $urls = array_diff( $urls, array( $emoji_svg_url ) );$/;"	v
+use	gulpfile.babel.js	/^                        use: [$/;"	P
+visible	lib/r-debug.php	/^	static function list_performance( $visible = false ) {$/;"	v
+watch	gulpfile.babel.js	/^export const watch = () => {$/;"	E
+when	lib/r-debug.php	/^			$when = '<strong>In ' . human_time_diff( $time ) . '<\/strong> (' . $time . ' ' . date_i18n( DATE_RSS, $time + $offset ) . ')';$/;"	v
+wpdd_modify_post_thumbnail_html	lib/images.php	/^function wpdd_modify_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $attr ) {$/;"	f

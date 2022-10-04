@@ -22,6 +22,7 @@ require_once( 'lib/custom-taxonomy.php' );
 require_once( 'lib/images.php' );
 require_once( 'lib/acf.php' );
 require_once( 'lib/users.php' );
+require_once( 'lib/first-last.php' );
 
 // https://gist.github.com/Rarst/1739714
 require_once( 'lib/r-debug.php' );

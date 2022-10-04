@@ -25,6 +25,7 @@
                 <?php else : ?>
                     <?php // no rows found ?>
                 <?php endif; ?>
+
             </div>
 
         </div>
@@ -33,7 +34,9 @@
         <!-- FOOTER LEFT -->
         <div class="single-grid--footer-container-left">
             <a class="donnees-techniques-button" href="#">Données Techniques</a>
+
             <span class="next-post-mobile"><?php previous_post_link('%link', 'Project Suivant'); ?></span>
+
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/close.svg" alt="close button">
 
             <div class="single-grid--donnees-techniques">
@@ -83,9 +86,12 @@
                     <p class="single-grid--information"><?php the_field( 'corps_de_metiers' ); ?></p>
                 </div>
             </div>
+        </div>
 
-            <div class="single-grid--footer-fake">
-            </div>
+
+        <div class="single-grid--footer-fake">
+            <a class="donnees-techniques-button" href="#">Données Techniques</a>
+            <span class="next-post-mobile"><?php previous_post_link('%link', 'Project Suivant'); ?></span>
         </div>
     </div>
     <div class="single-grid--container-right">
@@ -112,12 +118,15 @@
 
 
         <div class="single-grid--footer-container-right">
-            <span class="next-post"><?php previous_post_link('%link', 'Project Suivant'); ?></span>
+            <span class="next-post"><?php previous_post_link('%link', 'Project  Suivant'); ?></span>
         </div>
     </div>
 
     <!-- If we need navigation buttons -->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
+
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
 </div>
 

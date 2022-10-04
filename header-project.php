@@ -16,6 +16,8 @@
             <!-- NAVIGATION -->
             <div class="header-navigation">
 
+                <?php get_template_part( 'template-parts/header-background' ); ?>
+
                 <!-- NAVIGATION ITEMS -->
                 <span class="navigation--projects">
                     <a href="<?php echo get_post_type_archive_link( 'project' ); ?>">Projets</a>
@@ -71,6 +73,28 @@
                 ?>
                 <span id="all-projects">Tout voir</span>
                 </div>
+
+            <!-- PROJECTS GRID -->
+        <div class="projects-grid">
+
+                    <?php
+                        $args = array(
+                            'post_type'      => 'project',
+                            'posts_per_page' => -1,
+                            'tax_query'      => (
+                                array(
+                                    'taxonomy' => 'categorie'
+                                )
+                            )
+                        );
+                        $home_projects = new WP_Query( $args );
+                        if ( $home_projects->have_posts() ) : while ( $home_projects->have_posts() ) : $home_projects->the_post();
+                    ?>
+
+                    <?php get_template_part( 'template-parts/content' , 'project' ); ?>
+
+                    <?php endwhile; endif; wp_reset_postdata(); ?> <!-- WP_Query for CPT project -->
+            </div>
 
 
         <!-- COMMENT TO MATCH HEADER-HOME -->

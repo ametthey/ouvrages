@@ -19,6 +19,8 @@
             <!-- NAVIGATION -->
             <div class="header-navigation">
 
+                <?php get_template_part( 'template-parts/header-background' ); ?>
+
                 <!-- NAVIGATION ITEMS -->
                 <span class="navigation--projects">
                     <a href="<?php echo get_post_type_archive_link( 'project' ); ?>">Projets</a>

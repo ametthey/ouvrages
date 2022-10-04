@@ -6,15 +6,15 @@
     height: auto;
     display: block;
     position: relative;
+    overflow: hidden;
     // will-change:transform;
 
     @include respond(tablet) {
-        // position: sticky;
-        // position: -webkit-sticky;
-        // top: 0;
     }
 
     &.site-header-single {
+        overflow: initial;
+
         .header-navigation {
             .header-category {
                 display: none;
@@ -44,6 +44,10 @@
 
     }
 
+    &.is-pinned {
+        overflow: initial;
+    }
+
     a,
     span  {
         align-self: center;
@@ -60,10 +64,20 @@
         position: sticky;
         position: -webkit-sticky;
         top: -1px;
-        // z-index: 3;
         z-index: 4; // Pour que le bandeau bureau passe au dessus des filtres
 
         // margin-bottom: 62px;
+
+        .header-navigation-background {
+            background-color: $bg;
+            border-bottom: 1px solid $color;
+            height: 62px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
 
         .navigation--projects,
         .navigation--office {
@@ -83,7 +97,7 @@
 
         .navigation--office {
             opacity: 1;
-            z-index: 2;
+            z-index: 3;
 
             &.active {
                 @include respond(tablet) {
@@ -102,11 +116,7 @@
 
                     overflow: auto;
 
-
-                    // Juste le temps de débugger le filtre en mobile
-                    display: none;
-
-                    // NAV ACTIVE
+                                // NAV ACTIVE
                     p {
                         &:first-child {
                             display: block;
@@ -134,6 +144,7 @@
 
         .navigation--projects {
             opacity: 1;
+            z-index: 2;
 
             @include respond(tablet) {
                 display: none;
@@ -168,7 +179,7 @@
                     width: 100vw;
 
                     display: grid;
-                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-columns: repeat(4, 1fr);
                     grid-template-areas:
                         'project bureaux .'
                         '. commercial .'
@@ -237,6 +248,7 @@
         .navigation--hamburger {
             align-self: center;
             display: none;
+            z-index: 3;
             @include respond(tablet) {
                 display: flex;
             }
@@ -253,7 +265,7 @@
             height: auto;
             width: 50%;
 
-            z-index: 1;
+            z-index: 2;
 
             // background-color: red;
 
@@ -329,6 +341,7 @@
             .logo--container-mobile {
                 display: none;
                 text-align: center;
+                text-transform: uppercase;
 
                 @include respond(tablet) {
                     display: block;
@@ -339,21 +352,9 @@
 
         // OFFICE COLLAPSE
         .header-navigation--office {
+            border-bottom: 1px solid $color;
             background-color: $bg;
-            border: none;
-            // @include grid( repeat(12, 1fr), 1fr, $ratio, $ratio,  repeat(4, 1fr), 1fr ,$ratio, $ratio);
-            @include grid( repeat(12, 1fr), 1fr, $ratio, $ratio,  repeat(4, 1fr), 1fr ,$ratio, $ratio);
-
-            // display: grid;
-            // grid-template-columns: repeat(12, 1fr);
-            // grid-template-rows: 1fr;
-
-            // @include respond(tablet) {
-            //     grid-template-columbs:
-            // }
-
-
-
+            @include grid( repeat(12, 1fr), 1fr, 0, $ratio,  repeat(4, 1fr), 1fr ,0, $ratio);
             font-size: $p !important;
             grid-template-areas:
                 '. presentation presentation presentation presentation presentation . . . . . .'
@@ -361,17 +362,29 @@
                 'equipe1 team team team team team . . . . . .'
                 'design cm cm cm cm cm . . . . . .'
                 'dev pe pe pe pe pe . . . . . .';
-            max-height: 0;
             overflow: hidden;
             position: absolute;
             top: 62px;
-            transition: max-height 1.2s $easing;
-            z-index: 1;
+            // transition: max-height 1.2s $easing;
+            transition: all 1.2s $easing;
+            z-index: 0;
+
+            // NEW DESIGN
+            max-height: max-content;
+            transform: translateY(-100%);
+            // opacity: 0;
+            // visibility: hidden;
+
+            @include respond(tablet) {
+                display: none;
+            }
 
             &.active {
-                border-bottom: 1px solid $color;
                 // padding: calc( #{$ratio} * 2 ) calc( #{$ratio} * 2 ) calc( #{$ratio} * 4 );
                 padding: calc( #{ $ratio } * 2)  $ratio calc( #{$ratio} * 4 ) $ratio;
+                transform: translateY(0);
+                // visibility: visible;
+                // opacity: 1;
             }
 
             p {
@@ -447,13 +460,13 @@
                 border: none;
                 display: grid;
                 font-size: $p !important;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 grid-template-areas:
-                    '. presentation presentation'
-                    'contact adresse adresse'
-                    'equipe1 team team'
-                    'design cm cm'
-                    'dev pe pe';
+                    '. presentation presentation presentation'
+                    'contact adresse adresse adresse'
+                    'equipe1 team team team'
+                    'design cm cm cm'
+                    'dev pe pe pe';
                 grid-template-rows: auto;
                 height: max-content;
                 overflow: auto;
@@ -486,6 +499,14 @@
                 grid-area: pe;
             }
 
+            .desktop--office-bureau {
+                display: none;
+
+                @include respond(tablet) {
+                    display: block;
+                }
+            }
+
             .desktop--office-contact {
                 grid-area: contact;
             }
@@ -513,10 +534,13 @@
         background-color: $bg;
         border-bottom: 1px solid $color;
         height: 62px;
+        opacity: 1;
         padding: $ratio;
-        position: sticky;
-        position: -webkit-sticky;
+        position: absolute;
         top: 61px;
+        transition: all 1.2s $easing;
+        transform: translateY(-100%);
+        visibility: visible;
         width: 100%;
         z-index: 3;
 
@@ -526,7 +550,12 @@
             }
         }
 
-        // display: none;
+        // Show category with delay
+        &.is-pinned {
+            position: sticky;
+            position: -webkit-sticky;
+            transform: translateY(0);
+        }
 
         @include respond(tablet) {
             display: none;
